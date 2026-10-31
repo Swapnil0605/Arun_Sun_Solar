@@ -1,0 +1,913 @@
+/* Aktiv Grotesk for headings; Verdana for body text */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* =========================================
+   WHY ARUN SUN SOLAR — REFERENCE STYLE
+   Layout follows the supplied reference image.
+   Existing website data and images are preserved.
+========================================= */
+
+.why-solar {
+    position: relative;
+    width: calc(100% - 48px);
+    max-width: 1500px;
+    min-height: 620px;
+    margin: 0 auto;
+    padding: 30px 0 44px;
+    overflow: hidden;
+    border-radius: 28px;
+    box-sizing: border-box;
+    background-color: #67b8ed;
+    background-image: url(../images/why-solar-background.jpeg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Keeps the section visually soft without changing the supplied image. */
+.why-solar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(38, 139, 224, 0.10), rgba(38, 139, 224, 0.00) 65%);
+    pointer-events: none;
+}
+
+.why-solar-container {
+    position: relative;
+    z-index: 2;
+    width: min(1420px, calc(100% - 56px));
+    height: 100%;
+    min-height: 504px;
+    margin: 0 auto;
+}
+
+/* Intro remains hidden exactly as in the current website. */
+.why-solar-intro {
+    display: none;
+}
+
+.why-solar-cards {
+    position: relative;
+    z-index: 4;
+    width: min(560px, 46%);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.why-solar-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    border-radius: 20px;
+    background: rgba(247, 250, 255, 0.90);
+    box-shadow:
+        0 10px 28px rgba(19, 64, 113, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.82);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.why-solar-card:hover {
+    transform: translateY(-1px);
+    background: rgba(249, 251, 255, 0.95);
+    box-shadow: 0 16px 38px rgba(19, 64, 113, 0.13);
+}
+
+.why-solar-card-trigger {
+    width: 100%;
+    min-height: 94px;
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) 44px;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 28px;
+    border: 0;
+    background: transparent;
+    color: #0b1238;
+    text-align: left;
+    cursor: default;
+    font: inherit;
+}
+
+.why-solar-card-number {
+    color: #9aa4b8;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.why-solar-card-title {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    font-size: clamp(18px, 1.55vw, 24px);
+    line-height: 1.22;
+    font-weight: 700;
+    letter-spacing: -0.55px;
+}
+
+.why-solar-card-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(0, 55, 255, 0.18);
+    border-radius: 50%;
+    color: #003dff;
+    font-size: 18px;
+    transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+}
+
+.why-solar-card:hover .why-solar-card-icon {
+    transform: translate(2px, -2px);
+}
+
+.why-solar-card-content {
+    display: grid;
+    grid-template-columns: 185px minmax(0, 1fr);
+    gap: 22px;
+    max-height: 0;
+    padding: 0 28px;
+    opacity: 0;
+    transform: translateY(-8px);
+    overflow: hidden;
+    transition: max-height 0.55s ease, padding 0.55s ease, opacity 0.4s ease, transform 0.55s ease;
+}
+
+.why-solar-card:hover .why-solar-card-content,
+.why-solar-card:focus-within .why-solar-card-content {
+    max-height: 290px;
+    padding: 0 28px 26px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.why-solar-card:hover .why-solar-card-icon,
+.why-solar-card:focus-within .why-solar-card-icon {
+    transform: rotate(90deg);
+    background: #003dff;
+    color: #fff;
+}
+
+.why-solar-card-image {
+    height: 155px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #eef1f8;
+}
+
+.why-solar-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.why-solar-card:hover .why-solar-card-image img,
+.why-solar-card:focus-within .why-solar-card-image img {
+    transform: scale(1.045);
+}
+
+.why-solar-card-copy {
+    padding: 4px 4px 0 0;
+}
+
+.why-solar-card-kicker {
+    display: block;
+    margin-bottom: 9px;
+    color: #003dff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.why-solar-card-copy h3 {
+    margin: 0 0 9px;
+    color: #0b1238;
+    font-size: 21px;
+    line-height: 1.18;
+}
+
+.why-solar-card-copy p {
+    margin: 0;
+    color: #56627a;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* Existing technician image — same image, reference-style placement. */
+.why-solar-person {
+    position: absolute;
+    z-index: 3;
+    right: -22px;
+    bottom: 0;
+    width: min(78%, 1050px);
+    height: 700px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+
+.why-solar-person img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: right bottom;
+}
+
+@media (max-width: 1100px) {
+    .why-solar {
+        min-height: 570px;
+        padding-top: 62px;
+    }
+
+    .why-solar-container {
+        min-height: 468px;
+        width: min(100% - 42px, 1000px);
+    }
+
+    .why-solar-cards {
+        width: min(530px, 52%);
+    }
+
+    .why-solar-card-trigger {
+        min-height: 86px;
+        padding: 16px 22px;
+    }
+
+    .why-solar-person {
+        width: 66%;
+        right: -30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .why-solar {
+        width: calc(100% - 28px);
+        min-height: 0;
+        padding: 32px 0 28px;
+        border-radius: 22px;
+    }
+
+    .why-solar-container {
+        width: calc(100% - 28px);
+        min-height: 0;
+    }
+
+    .why-solar-person {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        height: 420px;
+        margin: 18px 0 -18px;
+        justify-content: center;
+    }
+
+
+
+    .why-solar-cards {
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .why-solar-card-trigger {
+        grid-template-columns: 34px minmax(0, 1fr) 36px;
+        gap: 10px;
+        min-height: 78px;
+        padding: 14px 16px;
+    }
+
+    .why-solar-card-title {
+        font-size: 17px;
+    }
+
+    .why-solar-card-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .why-solar-card-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .why-solar-card:hover .why-solar-card-content,
+    .why-solar-card:focus-within .why-solar-card-content {
+        max-height: 650px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 18px;
+    }
+
+    .why-solar-card-image {
+        height: 180px;
+    }
+
+    .why-solar-person {
+        height: 330px;
+    }
+}
+
+/* Fixed card panel: card expansion stays inside the left-side parent panel.
+   The main section/background and technician are independent of card height. */
+.why-solar {
+    height: 620px;
+    min-height: 620px;
+}
+
+.why-solar-container {
+    height: 100%;
+    min-height: 0;
+}
+
+.why-solar-cards-panel {
+    position: relative;
+    z-index: 5;
+    width: min(590px, 48%);
+    height: 548px;
+    padding: 18px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    border-radius: 28px;
+    background: rgba(235, 244, 255, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 18px 42px rgba(13, 63, 111, .08);
+    overflow: visible;
+}
+
+.why-solar-cards-panel .why-solar-cards {
+    width: 100%;
+    margin: 0;
+}
+
+/* Keep the technician completely independent from the cards/panel height. */
+.why-solar-person {
+    height: 590px;
+    bottom: auto;
+}
+
+@media (max-width: 1100px) {
+    .why-solar {
+        height: 570px;
+        min-height: 570px;
+    }
+
+    .why-solar-cards-panel {
+        width: min(560px, 54%);
+        height: 510px;
+        padding: 15px;
+    }
+
+    .why-solar-person {
+        height: 540px;
+    }
+}
+
+@media (max-width: 800px) {
+    .why-solar {
+        height: auto;
+        min-height: 0;
+    }
+
+    .why-solar-cards-panel {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+        border-radius: 22px;
+    }
+
+    .why-solar-person {
+        height: 420px;
+    }
+}
+
+/* =========================================================
+   WHY SOLAR — FIXED ACCORDION BEHAVIOUR
+   One card expands, the other cards contract.
+   The section background and technician are independent.
+========================================================= */
+
+@media (min-width: 801px) {
+    .why-solar {
+        height: 620px;
+        min-height: 620px;
+    }
+
+    .why-solar-container {
+        height: 100%;
+    }
+
+    .why-solar-cards-panel {
+        height: 548px;
+        overflow: hidden;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+    .why-solar-cards-panel .why-solar-cards {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+    }
+
+    .why-solar-cards-panel .why-solar-card {
+        flex: 0 1 62px;
+        min-height: 62px;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        overflow: hidden;
+        transition:
+            flex-grow 0.55s cubic-bezier(.22, 1, .36, 1),
+            flex-basis 0.55s cubic-bezier(.22, 1, .36, 1),
+            background 0.35s ease,
+            box-shadow 0.35s ease;
+    }
+
+    .why-solar-cards-panel .why-solar-card:hover {
+        transform: none;
+    }
+
+    .why-solar-cards-panel .why-solar-card:not(.is-active) {
+        flex-grow: 0;
+        flex-basis: 62px;
+    }
+
+    .why-solar-cards-panel .why-solar-card.is-active {
+        flex: 1 1 320px;
+        background: rgba(247, 250, 255, 0.94);
+        box-shadow:
+            0 14px 34px rgba(19, 64, 113, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.88);
+    }
+
+    .why-solar-cards-panel .why-solar-card-trigger {
+        flex: 0 0 62px;
+        min-height: 62px;
+        padding: 10px 22px;
+        cursor: pointer;
+        grid-template-columns: 46px minmax(0, 1fr) 42px;
+        gap: 14px;
+        box-sizing: border-box;
+    }
+
+    .why-solar-cards-panel .why-solar-card-title {
+        font-size: clamp(17px, 1.45vw, 22px);
+    }
+
+    .why-solar-cards-panel .why-solar-card-icon {
+        width: 38px;
+        height: 38px;
+        transition: transform 0.45s ease, background 0.35s ease, color 0.35s ease;
+    }
+
+    .why-solar-cards-panel .why-solar-card.is-active .why-solar-card-icon {
+        transform: rotate(90deg);
+        background: #003dff;
+        color: #fff;
+    }
+
+    /* IMPORTANT: details are controlled only by .is-active, never by hover. */
+    .why-solar-cards-panel .why-solar-card-content,
+    .why-solar-cards-panel .why-solar-card:hover .why-solar-card-content,
+    .why-solar-cards-panel .why-solar-card:focus-within .why-solar-card-content {
+        flex: 1 1 auto;
+        min-height: 0;
+        max-height: none;
+        display: grid;
+        grid-template-columns: minmax(125px, 34%) minmax(0, 1fr);
+        align-items: center;
+        gap: 18px;
+        padding: 0 22px 18px;
+        opacity: 0;
+        transform: translateY(-6px);
+        overflow: hidden;
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.4s ease, padding 0.4s ease;
+    }
+
+    .why-solar-cards-panel .why-solar-card.is-active .why-solar-card-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .why-solar-cards-panel .why-solar-card-image {
+        width: 100%;
+        height: 100%;
+        min-height: 125px;
+        max-height: 180px;
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    .why-solar-cards-panel .why-solar-card-image img,
+    .why-solar-cards-panel .why-solar-card:hover .why-solar-card-image img,
+    .why-solar-cards-panel .why-solar-card:focus-within .why-solar-card-image img {
+        transform: none;
+    }
+
+    .why-solar-cards-panel .why-solar-card-copy {
+        min-width: 0;
+        padding: 0;
+    }
+
+    .why-solar-cards-panel .why-solar-card-copy h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .why-solar-cards-panel .why-solar-card-copy p {
+        font-size: 12px;
+        line-height: 1.48;
+    }
+
+    /* The technician has its own fixed box and never participates in card layout. */
+    .why-solar-person {
+        position: absolute;
+        z-index: 3;
+        top: -10px;
+        right: -22px;
+        bottom: auto;
+        width: min(67%, 900px);
+        height: 590px;
+        flex: none;
+        pointer-events: none;
+    }
+
+    .why-solar-person img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+        transform: scaleY(1.02);
+
+    }
+}
+
+@media (max-width: 1100px) and (min-width: 801px) {
+    .why-solar-cards-panel {
+        width: min(560px, 54%);
+        height: 510px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-trigger {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-content {
+        grid-template-columns: 125px minmax(0, 1fr);
+        gap: 14px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .why-solar-person {
+        height: 540px;
+        right: -30px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    /* Mobile keeps the same accordion logic, but cards can grow naturally
+       so no detail text is clipped. */
+    .why-solar-cards-panel .why-solar-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .why-solar-cards-panel .why-solar-card {
+        flex: none;
+        min-height: 0;
+    }
+
+    .why-solar-cards-panel .why-solar-card.is-active {
+        flex: none;
+    }
+
+    .why-solar-cards-panel .why-solar-card-content,
+    .why-solar-cards-panel .why-solar-card:hover .why-solar-card-content,
+    .why-solar-cards-panel .why-solar-card:focus-within .why-solar-card-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-height: 0;
+        padding: 0 16px;
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    .why-solar-cards-panel .why-solar-card.is-active .why-solar-card-content {
+        max-height: 700px;
+        padding: 0 16px 18px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .why-solar-cards-panel .why-solar-card-trigger {
+        cursor: pointer;
+    }
+
+    .why-solar-cards-panel .why-solar-card-image {
+        height: 180px;
+        min-height: 0;
+    }
+}
+
+/* Section typography — Inter, applied only within this section. */
+.why-solar,
+.why-solar * {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+/* SWID-style type hierarchy for this section. */
+.why-solar-card-title {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+.why-solar-card-kicker {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+.why-solar-card-copy h3 {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+.why-solar-card-copy p {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+/* Section-wise SWID-style body typography */
+.why-solar-card-copy p {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+}
+
+/* =========================================================
+   WHY SOLAR — SWID / SUPPLIED REFERENCE ACCORDION
+   Five items share ONE glass panel. Individual card boxes,
+   card images and card shadows are intentionally removed.
+========================================================= */
+
+.why-solar-cards-panel {
+    width: min(700px, 54%);
+    height: 548px;
+    padding: 30px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 34px;
+    background: linear-gradient(145deg,
+            rgba(225, 239, 253, 0.28),
+            rgba(92, 132, 177, 0.38));
+    box-shadow: 0 18px 48px rgba(14, 55, 98, 0.10), inset 0 1px 0 rgba(255, 255, 255, .28);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    overflow: hidden;
+}
+
+.why-solar-cards-panel .why-solar-cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+}
+
+.why-solar-cards-panel .why-solar-card,
+.why-solar-cards-panel .why-solar-card:hover,
+.why-solar-cards-panel .why-solar-card.is-active {
+    flex: 0 0 70px;
+    min-height: 70px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    overflow: hidden;
+    transition: flex-basis .55s cubic-bezier(.22, 1, .36, 1);
+}
+
+.why-solar-cards-panel .why-solar-card.is-active {
+    flex: 1 1 300px;
+}
+
+.why-solar-cards-panel .why-solar-card-trigger,
+.why-solar-cards-panel .why-solar-card.is-active .why-solar-card-trigger {
+    position: relative;
+    width: 100%;
+    min-height: 70px;
+    height: 70px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 74px minmax(0, 1fr) 42px;
+    align-items: center;
+    gap: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #ffffff;
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    text-align: left;
+    cursor: pointer;
+}
+
+.why-solar-cards-panel .why-solar-card:not(:first-child) .why-solar-card-trigger {
+    border-top: 1px solid rgba(255, 255, 255, .62);
+}
+
+.why-solar-cards-panel .why-solar-card-number {
+    color: rgba(255, 255, 255, .96);
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: .2px;
+}
+
+.why-solar-cards-panel .why-solar-card-title {
+    min-width: 0;
+    color: #ffffff;
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    font-size: 22px;
+    line-height: 1.22;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+}
+
+.why-solar-cards-panel .why-solar-card-icon {
+    width: 28px;
+    height: 28px;
+    justify-self: end;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 0;
+    line-height: 1;
+    font-weight: 300;
+    transform: none !important;
+}
+
+.why-solar-cards-panel .why-solar-card-icon::before {
+    content: "+";
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.why-solar-cards-panel .why-solar-card.is-active .why-solar-card-icon::before {
+    content: "×";
+    font-size: 22px;
+}
+
+/* Remove all five internal card images. */
+.why-solar-cards-panel .why-solar-card-image {
+    display: none !important;
+}
+
+/* The reference has no repeated heading/kicker inside the expanded item. */
+.why-solar-cards-panel .why-solar-card-kicker,
+.why-solar-cards-panel .why-solar-card-copy h3 {
+    display: none !important;
+}
+
+.why-solar-cards-panel .why-solar-card-content,
+.why-solar-cards-panel .why-solar-card:hover .why-solar-card-content,
+.why-solar-cards-panel .why-solar-card:focus-within .why-solar-card-content,
+.why-solar-cards-panel .why-solar-card.is-active .why-solar-card-content {
+    display: block;
+    min-height: 0;
+    max-height: none;
+    padding: 0 0 26px 0;
+    margin: 0;
+    opacity: 0;
+    transform: none;
+    overflow: hidden;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+.why-solar-cards-panel .why-solar-card.is-active .why-solar-card-content {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.why-solar-cards-panel .why-solar-card-copy {
+    padding: 0;
+    margin: 0;
+}
+
+.why-solar-cards-panel .why-solar-card-copy p {
+    margin: 0;
+    max-width: 610px;
+    color: rgba(255, 255, 255, .96);
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.42;
+    font-weight: 400;
+    letter-spacing: -0.15px;
+}
+
+@media (max-width: 1100px) and (min-width: 801px) {
+    .why-solar-cards-panel {
+        width: min(620px, 57%);
+        padding: 26px 24px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-trigger {
+        grid-template-columns: 62px minmax(0, 1fr) 40px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-title {
+        font-size: 24px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-copy p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    .why-solar-cards-panel {
+        width: 100%;
+        height: auto;
+        min-height: 520px;
+        padding: 24px 20px;
+        border-radius: 28px;
+    }
+
+    .why-solar-cards-panel .why-solar-card,
+    .why-solar-cards-panel .why-solar-card:hover,
+    .why-solar-cards-panel .why-solar-card.is-active {
+        flex: 0 0 68px;
+        min-height: 68px;
+    }
+
+    .why-solar-cards-panel .why-solar-card.is-active {
+        flex-basis: 290px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-trigger {
+        min-height: 68px;
+        height: 68px;
+        grid-template-columns: 50px minmax(0, 1fr) 34px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-title {
+        font-size: 21px;
+        letter-spacing: -0.4px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-number {
+        font-size: 16px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-copy p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 560px) {
+    .why-solar-cards-panel {
+        padding: 20px 16px;
+        border-radius: 24px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-title {
+        font-size: 18px;
+    }
+
+    .why-solar-cards-panel .why-solar-card-copy p {
+        font-size: 15px;
+    }
+}
+
+
+/* Requested typography: headings use Aktiv Grotesk */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}

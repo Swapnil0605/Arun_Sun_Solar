@@ -1,0 +1,184 @@
+/* Aktiv Grotesk for headings; Verdana for body text */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* =========================================
+   IMPACT SECTION
+========================================= */
+
+.impact {
+    width: 100%;
+    padding: 110px 0;
+    background-color: #F7F9FF;
+}
+
+.impact-container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.impact-header {
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.impact-subtitle {
+    margin-bottom: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #ED1111;
+}
+
+.impact-title {
+    margin-bottom: 16px;
+    font-size: clamp(38px, 4vw, 54px);
+    line-height: 1.1;
+    font-weight: 700;
+    color: #080D2B;
+}
+
+.impact-description {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5B6475;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #FFFFFF;
+    border: 1px solid #DDE3F2;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 217, 0.07);
+}
+
+.impact-stat {
+    position: relative;
+    overflow: hidden;
+    padding: 42px 20px;
+    text-align: center;
+    transition: transform 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.impact-stat + .impact-stat {
+    border-left: 1px solid #E2E6F2;
+}
+
+.impact-stat::before {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 25px;
+    transition: transform 0.35s ease;
+}
+
+.impact-stat:nth-child(1)::before { content: "🏠"; }
+.impact-stat:nth-child(2)::before { content: "⚡"; }
+.impact-stat:nth-child(3)::before { content: "👥"; }
+.impact-stat:nth-child(4)::before { content: "🛡️"; }
+
+.impact-stat h3 {
+    margin: 0 0 14px;
+    font-size: clamp(34px, 3.5vw, 46px);
+    line-height: 1;
+    font-weight: 700;
+    color: #0000D9;
+    transition: transform 0.35s ease;
+}
+
+.impact-stat p {
+    max-width: 150px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4B5563;
+}
+
+.impact-stat:hover,
+.impact-stat.impact-active {
+    background-color: #F4F6FF;
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 217, 0.10);
+    z-index: 2;
+}
+
+.impact-stat:hover::before,
+.impact-stat.impact-active::before {
+    transform: translateY(-5px) scale(1.08);
+}
+
+.impact-stat:hover h3,
+.impact-stat.impact-active h3 {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.impact-stat::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    background: rgba(0, 0, 217, 0.06);
+    transition: transform 0.45s ease;
+    pointer-events: none;
+}
+
+.impact-stat.impact-active::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.impact-container::after {
+    content: "Cleaner energy. Bigger impact.";
+    display: block;
+    margin-top: 35px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #33408A;
+}
+
+@media (max-width: 900px) {
+    .impact { padding: 90px 0; }
+    .impact-stats { grid-template-columns: repeat(2, 1fr); }
+    .impact-stat:nth-child(3), .impact-stat:nth-child(4) { border-top: 1px solid #E2E6F2; }
+    .impact-stat:nth-child(3) { border-left: none; }
+}
+
+@media (max-width: 600px) {
+    .impact { padding: 75px 0; }
+    .impact-container { width: 88%; }
+    .impact-header { margin-bottom: 40px; }
+    .impact-stats { grid-template-columns: 1fr; border-radius: 18px; }
+    .impact-stat { padding: 30px 20px; }
+    .impact-stat + .impact-stat { border-left: none; border-top: 1px solid #E2E6F2; }
+    .impact-stat h3 { font-size: 34px; }
+}
+
+/* Section typography — Inter, applied only within this section. */
+.impact, .impact * {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+/* SWID-style type hierarchy for this section. */
+.impact-title { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.impact-description { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.impact-stat h3 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.impact-stat p { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+
+/* Section-wise SWID-style body typography */
+.impact-description,
+.impact-stat p { font-family: "Aktiv Grotesk", Verdana, sans-serif; font-weight: 400; letter-spacing: -0.005em; }
+
+/* Page background update: keep section white */
+.impact { background-color: #ffffff; }
+
+
+/* Requested typography: headings use Aktiv Grotesk */
+h1, h2, h3, h4, h5, h6 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }

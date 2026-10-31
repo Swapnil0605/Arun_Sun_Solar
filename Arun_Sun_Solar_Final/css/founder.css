@@ -1,0 +1,715 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+
+/* =========================================
+   FOUNDER JOURNEY
+   Desktop design preserved
+========================================= */
+
+.founder {
+    position: relative;
+
+    width: 100%;
+
+    padding: 5px 0;
+
+    background: #FFFFFF;
+
+    color: #080D2B;
+
+    overflow: hidden;
+}
+
+
+.founder-container {
+    width: 90%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.founder-header {
+    margin-bottom: 42px;
+
+    text-align: left;
+}
+
+
+.founder-subtitle {
+    margin: 0;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #0000D9;
+}
+
+
+/* =========================================
+   FOUNDER STORY
+========================================= */
+
+.founder-story {
+    display: grid;
+
+    grid-template-columns:
+        minmax(320px, 430px)
+        minmax(0, 1fr);
+
+    gap: 75px;
+
+    align-items: center;
+
+    max-width: 1120px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   FOUNDER IMAGE SLIDER
+========================================= */
+
+.founder-image-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    justify-self: center;
+}
+
+
+.founder-image {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: transparent;
+}
+
+
+.founder-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition:
+        opacity 0.7s ease,
+        transform 4s ease;
+}
+
+
+.founder-image img.is-changing {
+    opacity: 0;
+
+    transform: scale(1.025);
+}
+
+
+/* =========================================
+   SLIDER INDICATOR
+========================================= */
+
+.founder-slider-indicator {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+
+.founder-slider-indicator span {
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #D8DCEF;
+
+    transition: all 0.3s ease;
+}
+
+
+.founder-slider-indicator span.active {
+    width: 22px;
+
+    border-radius: 999px;
+
+    background: #0000D9;
+}
+
+
+/* =========================================
+   STORY CONTENT
+========================================= */
+
+.founder-content {
+    max-width: 650px;
+}
+
+
+.founder-step {
+    margin: 0 0 10px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #0000D9;
+}
+
+
+.founder-story-title {
+    margin: 0 0 5px;
+
+    font-size: clamp(30px, 3vw, 44px);
+
+    line-height: 1.15;
+
+    font-weight: 700;
+}
+
+
+.founder-role {
+    margin: 0 0 20px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #ED1111;
+}
+
+
+.founder-story-text {
+    max-width: 620px;
+
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #171717;
+}
+
+
+/* =========================================================
+   1440px AND BELOW
+   LARGE DESKTOP
+========================================================= */
+
+@media screen and (max-width: 1440px) {
+
+    .founder-container {
+        width: 90%;
+
+        max-width: 1350px;
+    }
+
+    .founder-story {
+        max-width: 1100px;
+
+        gap: 65px;
+    }
+
+    .founder-image-wrapper {
+        max-width: 420px;
+    }
+
+    .founder-content {
+        max-width: 630px;
+    }
+
+    .founder-story-title {
+        font-size: clamp(30px, 3vw, 43px);
+    }
+
+    .founder-story-text {
+        max-width: 610px;
+
+        font-size: 16px;
+
+        line-height: 1.78;
+    }
+}
+
+
+/* =========================================================
+   1152px AND BELOW
+   LAPTOP / SMALL DESKTOP
+========================================================= */
+
+@media screen and (max-width: 1152px) {
+
+    .founder-container {
+        width: 90%;
+    }
+
+    .founder-story {
+        max-width: 1000px;
+
+        grid-template-columns:
+            minmax(290px, 390px)
+            minmax(0, 1fr);
+
+        gap: 50px;
+    }
+
+    .founder-image-wrapper {
+        max-width: 390px;
+    }
+
+    .founder-content {
+        max-width: 570px;
+    }
+
+    .founder-story-title {
+        font-size: clamp(30px, 3.4vw, 40px);
+
+        line-height: 1.15;
+    }
+
+    .founder-story-text {
+        max-width: 570px;
+
+        font-size: 15.5px;
+
+        line-height: 1.75;
+    }
+
+    .founder-step {
+        font-size: 11px;
+
+        letter-spacing: 1.8px;
+    }
+}
+
+
+/* =========================================================
+   992px AND BELOW
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 992px) {
+
+    .founder {
+        padding: 60px 0;
+    }
+
+    .founder-container {
+        width: 88%;
+
+        max-width: 850px;
+    }
+
+    .founder-header {
+        margin-bottom: 35px;
+    }
+
+    .founder-story {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        max-width: 650px;
+
+        margin: 0 auto;
+    }
+
+    .founder-image-wrapper {
+        width: 100%;
+
+        max-width: 520px;
+
+        margin: 0 auto;
+    }
+
+    .founder-content {
+        width: 100%;
+
+        max-width: 650px;
+
+        margin: 0 auto;
+    }
+
+    .founder-story-title {
+        font-size: clamp(32px, 5vw, 44px);
+
+        line-height: 1.12;
+    }
+
+    .founder-story-text {
+        max-width: 100%;
+
+        font-size: 16px;
+
+        line-height: 1.75;
+    }
+}
+
+
+/* =========================================================
+   768px AND BELOW
+   LARGE MOBILE / TABLET PORTRAIT
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    .founder {
+        padding: 55px 0;
+    }
+
+    .founder-container {
+        width: 88%;
+    }
+
+    .founder-header {
+        margin-bottom: 30px;
+    }
+
+    .founder-story {
+        width: 100%;
+
+        gap: 32px;
+
+        max-width: 600px;
+    }
+
+    .founder-image-wrapper {
+        width: 100%;
+
+        max-width: 440px;
+
+        margin: 0 auto;
+    }
+
+    .founder-image {
+        width: 100%;
+
+        aspect-ratio: 4 / 5;
+
+        border-radius: 9px;
+    }
+
+    .founder-slider-indicator {
+        margin-top: 12px;
+
+        gap: 6px;
+    }
+
+    .founder-slider-indicator span {
+        width: 6px;
+
+        height: 6px;
+    }
+
+    .founder-slider-indicator span.active {
+        width: 20px;
+    }
+
+    .founder-content {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .founder-step {
+        margin-bottom: 9px;
+
+        font-size: 11px;
+
+        letter-spacing: 1.8px;
+    }
+
+    .founder-story-title {
+        font-size: clamp(30px, 6vw, 40px);
+
+        line-height: 1.12;
+
+        margin-bottom: 5px;
+    }
+
+    .founder-story-text {
+        max-width: 100%;
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+}
+
+
+/* =========================================================
+   576px AND BELOW
+   MEDIUM MOBILE
+========================================================= */
+
+@media screen and (max-width: 576px) {
+
+    .founder {
+        padding: 50px 0;
+    }
+
+    .founder-container {
+        width: 88%;
+    }
+
+    .founder-header {
+        margin-bottom: 25px;
+    }
+
+    .founder-story {
+        gap: 28px;
+
+        max-width: 100%;
+    }
+
+    .founder-image-wrapper {
+        max-width: 360px;
+    }
+
+    .founder-image {
+        aspect-ratio: 4 / 5;
+
+        border-radius: 8px;
+    }
+
+    .founder-slider-indicator {
+        margin-top: 11px;
+    }
+
+    .founder-step {
+        font-size: 10.5px;
+
+        letter-spacing: 1.6px;
+
+        margin-bottom: 8px;
+    }
+
+    .founder-story-title {
+        font-size: clamp(28px, 7.5vw, 38px);
+
+        line-height: 1.12;
+
+        letter-spacing: -0.5px;
+    }
+
+    .founder-story-text {
+        font-size: 15.5px;
+
+        line-height: 1.68;
+    }
+}
+
+
+/* =========================================================
+   480px AND BELOW
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .founder {
+        padding: 45px 0;
+    }
+
+    .founder-container {
+        width: 87%;
+    }
+
+    .founder-story {
+        gap: 25px;
+    }
+
+    .founder-image-wrapper {
+        max-width: 320px;
+    }
+
+    .founder-image {
+        aspect-ratio: 4 / 5;
+
+        border-radius: 8px;
+    }
+
+    .founder-slider-indicator {
+        margin-top: 10px;
+
+        gap: 6px;
+    }
+
+    .founder-slider-indicator span {
+        width: 6px;
+
+        height: 6px;
+    }
+
+    .founder-slider-indicator span.active {
+        width: 19px;
+    }
+
+    .founder-step {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 7px;
+    }
+
+    .founder-story-title {
+        font-size: clamp(27px, 8vw, 35px);
+
+        line-height: 1.12;
+
+        letter-spacing: -0.4px;
+    }
+
+    .founder-story-text {
+        font-size: 15px;
+
+        line-height: 1.65;
+
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   320px AND BELOW
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 320px) {
+
+    .founder {
+        padding: 40px 0;
+    }
+
+    .founder-container {
+        width: 90%;
+    }
+
+    .founder-story {
+        gap: 22px;
+    }
+
+    .founder-image-wrapper {
+        max-width: 280px;
+    }
+
+    .founder-image {
+        aspect-ratio: 4 / 5;
+
+        border-radius: 7px;
+    }
+
+    .founder-slider-indicator {
+        margin-top: 9px;
+
+        gap: 5px;
+    }
+
+    .founder-slider-indicator span {
+        width: 5px;
+
+        height: 5px;
+    }
+
+    .founder-slider-indicator span.active {
+        width: 17px;
+    }
+
+    .founder-step {
+        font-size: 9px;
+
+        letter-spacing: 1.3px;
+
+        margin-bottom: 7px;
+    }
+
+    .founder-story-title {
+        font-size: 25px;
+
+        line-height: 1.13;
+
+        letter-spacing: -0.3px;
+    }
+
+    .founder-story-text {
+        font-size: 14px;
+
+        line-height: 1.62;
+    }
+}
+
+
+/* =========================================================
+   SECTION TYPOGRAPHY
+========================================================= */
+
+.founder,
+.founder * {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+/* =========================================================
+   SWID-STYLE TYPE HIERARCHY
+========================================================= */
+
+.founder-subtitle {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.founder-story-title {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.founder-role {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.founder-story-text {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-weight: 300;
+
+    letter-spacing: -0.005em;
+}

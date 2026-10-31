@@ -1,0 +1,14 @@
+/* ARUN SUN SOLAR — SITE TYPOGRAPHY
+   Headings/display: Aktiv Grotesk
+   Body/general copy: Verdana
+*/
+body {
+    font-family: Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+button, .btn, .button,
+nav, .nav, .nav-link,
+.services-title, .certificate-title {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}

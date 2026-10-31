@@ -1,0 +1,63 @@
+/* =========================================
+   SCROLL REVEAL TRANSITIONS
+   Inspired by the supplied reference recording.
+   Layout, spacing, colors and content are untouched.
+========================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+
+    /* Elements that reveal as they enter the viewport. */
+    .scroll-reveal {
+        opacity: 0;
+        transform: translate3d(0, 54px, 0);
+        transition:
+            opacity 0.85s cubic-bezier(.22, 1, .36, 1),
+            transform 0.85s cubic-bezier(.22, 1, .36, 1);
+        will-change: opacity, transform;
+    }
+
+    .scroll-reveal.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* A little stronger movement for the large visual/content blocks. */
+    .scroll-reveal.scroll-reveal-large {
+        transform: translate3d(0, 68px, 0);
+    }
+
+    .scroll-reveal.scroll-reveal-large.is-visible {
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* Staggered children keep the same layout while giving the
+       reference-style upward flow. */
+    .scroll-reveal-stagger > .scroll-reveal:nth-child(2) {
+        transition-delay: 90ms;
+    }
+
+    .scroll-reveal-stagger > .scroll-reveal:nth-child(3) {
+        transition-delay: 180ms;
+    }
+
+    .scroll-reveal-stagger > .scroll-reveal:nth-child(4) {
+        transition-delay: 270ms;
+    }
+
+    .scroll-reveal-stagger > .scroll-reveal:nth-child(5) {
+        transition-delay: 360ms;
+    }
+
+    .scroll-reveal-stagger > .scroll-reveal:nth-child(6) {
+        transition-delay: 450ms;
+    }
+}
+
+/* Accessibility: keep every element naturally visible when motion is reduced. */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}

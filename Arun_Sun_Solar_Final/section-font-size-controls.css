@@ -1,0 +1,147 @@
+/* =========================================================
+   ARUN SUN SOLAR — TYPOGRAPHY CONTROLS
+   IMPORTANT: !important is intentional here. Existing
+   responsive/section CSS was overriding the earlier controls.
+   Change only the values below.
+   ========================================================= */
+
+/* HOME DESCRIPTION */
+.hero-description,
+.hero-content p,
+.home-description,
+.hero-reference-description,
+.home-projects-description {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+}
+
+/* HOME TITLE */
+.hero-title,
+.hero-content h1,
+.home-title,
+.hero-reference-title {
+    font-weight: 300 !important;
+}
+
+/* ABOUT DESCRIPTION */
+.about-description,
+.about-text,
+.about-content p,
+.about-content {
+    font-size: 14px !important;
+    font-weight: 200 !important;
+}
+
+/* ABOUT TITLE */
+.about-title,
+.about-heading,
+.about-content h2 {
+    font-weight: 300 !important;
+}
+
+/* SERVICES DESCRIPTION */
+.services-description,
+.service-description,
+.service-item-description,
+.service-card p {
+    font-size: 17px !important;
+    font-weight: 300 !important;
+}
+
+/* SERVICES TITLE */
+.services-title,
+.service-title,
+.service-item-title,
+.service-card h3 {
+    font-weight: 500 !important;
+}
+
+/* JOURNEY DESCRIPTION */
+.journey-description,
+.journey-text,
+.journey-content p,
+.founder-content p,
+.founder-story-text,
+.founder-content {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+}
+
+/* JOURNEY TITLE */
+.journey-title,
+.journey-heading,
+.journey-content h2,
+.founder-subtitle,
+.founder-story-title {
+    font-weight: 300 !important;
+}
+
+/* GALLERY DESCRIPTION */
+.gallery-description,
+.gallery-text,
+.gallery-content p {
+    font-size: 14px !important;
+    font-weight: 300 !important;
+}
+
+/* GALLERY TITLE */
+.gallery-title,
+.gallery-heading,
+.gallery-content h2 {
+    font-weight: 300 !important;
+}
+
+/* CERTIFICATES DESCRIPTION */
+.certificates-description,
+.certificate-description,
+.certificate-card p {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+}
+
+/* CERTIFICATES TITLE */
+.certificates-title,
+.certificate-title,
+.certificate-card h3,
+.certificates-subtitle {
+    font-weight: 500 !important;
+}
+
+/* PROJECTS DESCRIPTION */
+.projects-description,
+.project-description,
+.project-card p,
+.home-projects-description {
+    font-size: 17px !important;
+    font-weight: 400 !important;
+}
+
+/* PROJECTS TITLE */
+.projects-title,
+.project-title,
+.project-card h3 {
+    font-weight: 500 !important;
+}
+
+
+/* LIGHTER TEXT WEIGHT — preserves all existing sizes/layout/styles */
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+main p,
+main strong,
+main b,
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6,
+section p,
+section strong,
+section b {
+    font-weight: 400 !important;
+}

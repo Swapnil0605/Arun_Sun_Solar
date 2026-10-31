@@ -1,0 +1,447 @@
+/* Aktiv Grotesk for headings; Verdana for body text */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* =========================================
+   ARUN SUN SOLAR FOOTER
+   Clean White Corporate Style
+========================================= */
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: #F7F8FA;
+    color: #080D2B;
+    padding: 78px 0 0;
+    overflow: hidden;
+}
+
+.footer::before,
+.footer::after {
+    display: none;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr 1.05fr 1.05fr 1.35fr;
+    gap: 46px;
+    padding-bottom: 68px;
+    align-items: start;
+}
+
+.footer-brand {
+    position: relative;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-brand img,
+.footer-brand .footer-logo {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 190px;
+    height: auto;
+    max-width: 190px;
+    max-height: 124px;
+    object-fit: contain;
+    margin: 0 0 14px 0;
+}
+
+/* Footer logo is shown without certification text. */
+.footer-brand::after {
+    display: none;
+}
+
+.footer-brand p {
+    position: relative;
+    z-index: 2;
+    margin: 10px 0 0;
+    max-width: 360px;
+    color: #526078;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.footer-description {
+    font-size: 10px;
+    line-height: 1.65;
+    color: #526078;
+}
+
+.footer-column {
+    padding-top: 0;
+}
+
+.footer-column h3 {
+    margin: 0 0 24px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+    color: #080D2B;
+    position: relative;
+    padding-bottom: 0;
+}
+
+.footer-column h3::after {
+    display: none;
+}
+
+.footer-column ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 14px;
+}
+
+.footer-column a {
+    position: relative;
+    display: inline-block;
+    color: #526078;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #ED1111;
+    transform: translateX(4px);
+}
+
+.footer-social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.footer-social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 7px;
+    color: #ffffff;
+    background: #1267E8;
+    transition: background-color 0.3s ease, color 0.3s ease,
+        transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.social-icon .instagram-dot,
+.social-icon .linkedin-dot,
+.social-icon .youtube-play {
+    fill: currentColor;
+    stroke: none;
+}
+
+.footer-social-links a:hover {
+    transform: translateY(-3px);
+}
+
+.footer-social-links a:hover .social-icon {
+    background: #ED1111;
+    color: #ffffff;
+    transform: scale(1.04);
+    box-shadow: 0 8px 18px rgba(237, 17, 17, 0.16);
+}
+
+.footer-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-contact-item {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    color: #526078 !important;
+    font-size: 14px !important;
+    line-height: 1.45;
+    text-decoration: none;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.contact-details a,
+.contact-details span {
+    color: inherit;
+    font-size: inherit;
+    line-height: 1.45;
+    text-decoration: none;
+}
+
+.contact-details strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #526078;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.footer-contact-item:hover {
+    color: #ED1111 !important;
+    transform: none !important;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1267E8;
+    margin-top: 1px;
+}
+
+.contact-icon svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.footer-contact-item:hover .contact-icon {
+    color: #ED1111;
+}
+
+.footer-address {
+    cursor: default;
+}
+
+.footer-bottom {
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 22px 0 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-top: 1px solid #9797a7;
+}
+
+
+/* Match the lower footer strip to the main footer background. */
+.footer-bottom::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: #F7F8FA;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #647086;
+}
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.footer-legal a {
+    font-size: 14px;
+    color: #647086;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: #ED1111;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+    .footer-container {
+        grid-template-columns: 1.2fr 1fr 1.15fr;
+        gap: 42px;
+    }
+
+    .footer-contact {
+        grid-column: 2 / 3;
+    }
+
+    .footer-address-column {
+        grid-column: 3;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+    .footer {
+        padding-top: 56px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 44px 32px;
+        padding-bottom: 46px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand img,
+    .footer-brand .footer-logo {
+        width: 190px;
+        max-width: 190px;
+        max-height: 125px;
+    }
+
+    .footer-brand::after {
+        top: 112px;
+    }
+
+    .footer-contact,
+    .footer-address-column {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 22px 0;
+    }
+
+    .footer-legal {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 520px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .footer-brand,
+    .footer-contact,
+    .footer-address-column {
+        grid-column: auto;
+    }
+}
+
+.footer, .footer * {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+/* =========================================
+   FIXED CONTACT ACTIONS
+   Visible on every page while scrolling
+========================================= */
+.floating-contact-actions {
+    position: fixed;
+    top: 78%;
+    right: 18px;
+    transform: translateY(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.floating-contact-actions a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 0;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.floating-contact-actions img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.floating-contact-actions a:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 5px 10px rgba(8, 13, 43, 0.18));
+}
+
+@media (max-width: 760px) {
+    .floating-contact-actions {
+        right: 10px;
+        gap: 8px;
+    }
+
+    .floating-contact-actions a {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+
+/* Requested typography: headings use Aktiv Grotesk */
+h1, h2, h3, h4, h5, h6 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }

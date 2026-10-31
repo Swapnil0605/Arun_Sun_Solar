@@ -1,0 +1,382 @@
+/* Aktiv Grotesk for headings; Verdana for body text */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* =========================================
+   ARUN SUN SOLAR - HOME PROJECTS SLIDER
+   Layout/spacing fix only
+========================================= */
+.home-projects-section{
+    position:relative;
+    width:100%;
+    padding:96px 0 25px;
+    margin:0;
+    background:linear-gradient(135deg,#f8fbff 0%,#eef8ff 52%,#f8fbff 100%);
+    overflow:hidden;
+    scroll-margin-top:110px;
+}
+
+.home-projects-container{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto;
+}
+
+.home-projects-header{
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 42px;
+}
+
+.home-projects-title{
+    margin:0 0 13px;
+    color:#080d2b;
+    font-size:clamp(32px,4vw,50px);
+    line-height:1.08;
+    font-weight:800;
+}
+
+.home-projects-description{
+    margin:0;
+    color:#080d2b;
+    font-size:20px;
+    line-height:1.6;
+}
+
+.home-projects-viewport{
+    width:100%;
+    overflow-x:auto;
+    overflow-y:visible;
+    padding:10px 4px 22px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+}
+
+.home-projects-viewport::-webkit-scrollbar{display:none}
+
+.home-projects-track{
+    display:flex;
+    align-items:stretch;
+    gap:28px;
+    width:max-content;
+}
+
+.home-project-card{
+    position:relative;
+    flex:0 0 clamp(300px,31vw,480px);
+    overflow:visible;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+    transition:transform .3s ease;
+    outline:none;
+}
+
+.home-project-card:hover,
+.home-project-card:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:none;
+}
+
+.home-project-image-wrap{
+    position:relative;
+    height:300px;
+    overflow:hidden;
+    border-radius:10px;
+    background:#dfeeff;
+}
+
+.home-project-image-wrap img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .45s ease
+}
+
+.home-project-card:hover .home-project-image-wrap img,
+.home-project-card:focus-visible .home-project-image-wrap img{
+    transform:scale(1.025)
+}
+
+.home-project-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(5,11,40,.58);
+    opacity:0;
+    transition:opacity .3s ease
+}
+
+.home-project-card:hover .home-project-overlay,
+.home-project-card:focus-visible .home-project-overlay{
+    opacity:1
+}
+
+.home-project-view{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:7px;
+    border:0;
+    background:transparent;
+    color:#fff;
+    cursor:pointer;
+    font:inherit
+}
+
+.home-project-view span{
+    display:grid;
+    place-items:center;
+    width:52px;
+    height:52px;
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:50%;
+    font-size:30px;
+    font-weight:300;
+    transition:.25s ease
+}
+
+.home-project-view:hover span{
+    background:#0000d9;
+    transform:scale(1.06)
+}
+
+.home-project-view small{
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px
+}
+
+.home-project-content{
+    padding:13px 8px 0;
+    background:transparent;
+}
+
+.home-project-content>span{
+    display:block;
+    margin-bottom:8px;
+    color:#0000d9;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:1.2px;
+}
+
+.home-project-content h3{
+    margin:0 0 8px;
+    color:#080d2b;
+    font-size:22px;
+    line-height:1.25;
+    font-weight:600;
+}
+
+.home-project-content p{
+    margin:0 0 12px;
+    color:#666;
+    font-size:13px;
+    line-height:1.55;
+    max-width:95%;
+}
+
+.home-project-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    color:#111;
+}
+
+.home-project-meta b{
+    padding:0;
+    border:0;
+    border-radius:0;
+    color:#555;
+    background:transparent;
+    font-size:12px;
+    font-weight:400;
+}
+
+.home-projects-more{
+    position:relative;
+    display:flex;
+    width:max-content;
+    margin:0 auto 40px;
+    align-items:center;
+    gap:10px;
+    padding:12px 20px;
+    border:1px solid rgba(0,0,217,.18);
+    border-radius:999px;
+    color:#080d2b;
+    background:#fff;
+    text-decoration:none;
+    font-weight:700;
+    transition:.25s ease
+}
+
+.home-projects-more:hover{
+    color:#fff;
+    background:#0000d9;
+    transform:translateY(-2px)
+}
+
+/* Explicit white separation between Projects and Customer Stories. */
+.projects-reviews-gap{
+    width:100%;
+    height:30px;
+    background:#fff;
+    display:block;
+    flex:none;
+}
+
+.home-projects-section + .home-project-modal + .projects-reviews-gap + .reviews{
+    margin-top:0;
+}
+
+.home-project-modal{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px;
+    visibility:hidden;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .28s ease,visibility .28s ease
+}
+
+.home-project-modal.is-open{
+    visibility:visible;
+    opacity:1;
+    pointer-events:auto
+}
+
+.home-project-modal-backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(3,8,28,.84);
+    backdrop-filter:blur(5px)
+}
+
+.home-project-modal-dialog{
+    position:relative;
+    z-index:1;
+    width:min(1050px,94vw);
+    display:flex;
+    align-items:center;
+    justify-content:center
+}
+
+.home-project-modal-content{
+    width:min(980px,84vw);
+    max-height:88vh;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0 28px 80px rgba(0,0,0,.55)
+}
+
+.home-project-modal-content img{
+    display:block;
+    width:100%;
+    max-height:80vh;
+    object-fit:contain;
+    background:#fff
+}
+
+.home-project-modal-caption{padding:12px 18px 15px}
+.home-project-modal-caption p{margin:0 0 4px;color:#0000d9;font-size:10px;font-weight:400;letter-spacing:2px}
+.home-project-modal-caption h2{margin:0;color:#080d2b;font-size:20px}
+
+.home-project-modal-close,
+.home-project-modal-arrow{
+    position:absolute;
+    z-index:2;
+    display:grid;
+    place-items:center;
+    border:0;
+    color:#fff;
+    background:rgba(255,255,255,.14);
+    backdrop-filter:blur(8px);
+    cursor:pointer;
+    transition:.25s ease
+}
+
+.home-project-modal-close:hover,
+.home-project-modal-arrow:hover{background:#0000d9}
+
+.home-project-modal-close{top:-15px;right:-15px;width:46px;height:46px;border-radius:50%;font-size:30px}
+.home-project-modal-arrow{top:50%;width:50px;height:50px;margin-top:-25px;border-radius:50%;font-size:23px}
+.home-project-modal-prev{left:-70px}
+.home-project-modal-next{right:-70px}
+
+body.home-project-modal-open{overflow:hidden}
+
+@media(max-width:900px){
+    .home-project-card{flex-basis:min(78vw,420px)}
+    .home-project-image-wrap{height:260px}
+    .home-project-modal-prev{left:8px}
+    .home-project-modal-next{right:8px}
+}
+
+@media(max-width:600px){
+    .home-projects-section{padding:78px 0 64px}
+    .home-projects-container{width:90%}
+    .home-projects-header{margin-bottom:34px}
+    .home-project-card{flex-basis:82vw}
+    .home-project-image-wrap{height:230px}
+    .projects-reviews-gap{height:80px}
+    .home-project-modal{padding:18px}
+    .home-project-modal-close{top:8px;right:8px}
+    .home-project-modal-arrow{top:auto;bottom:18px;margin:0}
+    .home-project-modal-content{width:90vw}
+    .home-project-modal-caption{display:none}
+}
+
+/* Section typography — Inter, applied only within this section. */
+.home-projects-section, .home-projects-section * {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+/* Section-wise SWID-style body typography */
+.home-projects-description,
+.home-project-content p,
+.home-project-modal-caption p { font-family: "Aktiv Grotesk", Verdana, sans-serif; font-weight: 300; letter-spacing: -0.005em; }
+
+/* Page background update: keep section white */
+.home-projects-section { background: #ffffff; }
+
+
+
+.home-projects-section .home-project-meta b + b::before{
+    content:" · ";
+    margin:0 6px;
+    color:#888;
+}
+
+.home-projects-section .home-project-overlay{
+    border-radius:10px;
+}
+
+.home-projects-section .home-project-view span{
+    border:0;
+    background:#0000d9;
+}
+
+
+@media(max-width:900px){
+    .home-project-card{flex-basis:min(72vw,420px)}
+    .home-project-image-wrap{height:260px}
+}
+
+@media(max-width:600px){
+    .home-project-card{flex-basis:82vw}
+    .home-project-image-wrap{height:230px}
+}
+
+
+/* Requested typography: headings use Aktiv Grotesk */
+h1, h2, h3, h4, h5, h6 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }

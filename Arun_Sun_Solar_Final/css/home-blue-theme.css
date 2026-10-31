@@ -1,0 +1,87 @@
+/* =========================================
+   HOME PAGE - BLUE BUTTON & REVIEW ACCENT THEME
+   Only home-page colors are changed here.
+========================================= */
+
+/* Primary buttons on the home page */
+body.home-page .about-btn,
+body.home-page .services-view-more,
+body.home-page .home-projects-more,
+body.home-page .final-cta-btn {
+    background: #1267E8;
+    border-color: #1267E8;
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(82, 190, 241, 0.20);
+}
+
+body.home-page .about-btn:hover,
+body.home-page .services-view-more:hover,
+body.home-page .home-projects-more:hover {
+    background: #1267E8;
+    border-color: #1267E8;
+    color: #ffffff;
+    box-shadow: 0 12px 28px rgba(82, 190, 241, 0.24);
+}
+
+/* Project modal controls */
+body.home-page .home-project-modal-close,
+body.home-page .home-project-modal-arrow {
+    background: #1267E8;
+    color: #ffffff;
+}
+
+body.home-page .home-project-modal-close:hover,
+body.home-page .home-project-modal-arrow:hover {
+    background: #70c9f5;
+    color: #ffffff;
+}
+
+/* Review section: replace the existing red accent with blue */
+body.home-page .reviews-subtitle,
+body.home-page .review-stars {
+    color: #1267E8;
+}
+
+body.home-page .review-avatar {
+    background-color: #1267E8;
+}
+
+body.home-page .reviews-arrow:hover {
+    background-color: #1267E8;
+}
+
+body.home-page .review-dot.active {
+    background-color: #1267E8;
+}
+
+/* Review navigation buttons are blue instead of white */
+body.home-page .reviews-arrow {
+    background-color: #1267E8;
+    border-color: #1267E8;
+    color: #ffffff;
+}
+
+body.home-page .reviews-arrow:hover {
+    background-color: #70c9f5;
+    border-color: #70c9f5;
+    color: #ffffff;
+}
+
+/* Project card view control */
+body.home-page .home-project-view span {
+    background: #1267E8;
+    border-color: #1267E8;
+    color: #ffffff;
+}
+
+body.home-page .home-project-view:hover span {
+    background: #1267E8;
+}
+
+/* Home-page navbar contact button: use the same solid blue from the reference. */
+body.home-page .nav-cta {
+    background: #1267E8;
+    border-color: #1267E8;
+    color: #ffffff;
+    margin-right: 30px;
+}

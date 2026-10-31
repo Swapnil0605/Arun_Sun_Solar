@@ -1,0 +1,933 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+
+/* =========================================
+   SWID-INSPIRED STATIC HERO
+   Home data preserved; hero controls refined.
+========================================= */
+
+.hero-about-stage {
+    position: relative;
+    width: 100%;
+    isolation: isolate;
+}
+
+
+.hero {
+    position: relative;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+
+    /* Desktop hero fits exactly inside the viewport. */
+    height: min(100svh, 56.25vw);
+    min-height: 0;
+
+    overflow: hidden;
+    color: #ffffff;
+}
+
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    /* Fill the hero edge-to-edge without cropping the source image. */
+    object-fit: fill;
+    object-position: center center;
+
+    transform: none;
+    animation: heroImageReveal 1.2s cubic-bezier(.22,1,.36,1) both;
+}
+
+
+@keyframes heroImageReveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.20) 0%,
+            rgba(0,0,0,.08) 48%,
+            rgba(0,0,0,.02) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.10) 0%,
+            rgba(0,0,0,.00) 46%,
+            rgba(0,0,0,.48) 100%
+        );
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(90%, 1450px);
+    max-width: 1450px;
+    height: 100%;
+
+    margin: 0 auto;
+    padding: 150px 0 44px;
+
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(280px, 360px);
+
+    grid-template-rows: 1fr auto;
+
+    column-gap: clamp(50px, 7vw, 110px);
+    align-items: start;
+}
+
+
+.hero-copy-left {
+    align-self: start;
+    max-width: 780px;
+}
+
+
+.hero-title {
+    max-width: 720px;
+    margin: 0;
+
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    font-size: clamp(48px, 4.35vw, 72px);
+    line-height: 1.04;
+    letter-spacing: -.055em;
+    font-weight: 400;
+
+    text-wrap: balance;
+}
+
+
+.hero-description {
+    align-self: start;
+
+    max-width: 360px;
+    margin: 8px 0 0;
+
+    grid-column: 2;
+    justify-self: end;
+
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.38;
+    font-weight: 400;
+    letter-spacing: -.025em;
+
+    color: rgba(255,255,255,.96);
+}
+
+
+/* Buttons intentionally removed from the hero. */
+
+.hero-buttons,
+.hero-btn {
+    display: none !important;
+}
+
+
+.hero-stats {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 34px;
+
+    grid-column: auto;
+    align-self: auto;
+
+    width: 100%;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,.55);
+}
+
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+    min-width: 0;
+
+    padding: 0 30px;
+
+    border-right: 1px solid rgba(255,255,255,.45);
+}
+
+
+.hero-stat:first-child {
+    padding-left: 0;
+}
+
+
+.hero-stat:last-child {
+    padding-right: 0;
+    border-right: 0;
+}
+
+
+.hero-stat strong {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-size: clamp(36px, 3vw, 50px);
+    line-height: .95;
+
+    font-weight: 400;
+    letter-spacing: -.05em;
+
+    white-space: nowrap;
+}
+
+
+.hero-stat span {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-size: 15px;
+    line-height: 1.35;
+
+    font-weight: 400;
+
+    color: rgba(255,255,255,.94);
+}
+
+
+.hero-copy-left,
+.hero-description,
+.hero-stats {
+    opacity: 0;
+    transform: translateY(26px);
+
+    animation:
+        heroContentReveal
+        .9s
+        cubic-bezier(.22,1,.36,1)
+        forwards;
+}
+
+
+.hero-copy-left {
+    animation-delay: .18s;
+}
+
+
+.hero-description {
+    animation-delay: .34s;
+}
+
+
+.hero-stats {
+    animation-delay: .52s;
+}
+
+
+@keyframes heroContentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.stat-number {
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   FINAL CLEAN HERO
+   Clean source image + live website content overlay.
+   The source image itself contains no navbar, text, or stats.
+========================================================= */
+
+.hero-reference-mode {
+    position: relative;
+
+    width: 100%;
+
+    /*
+       Desktop design preserved
+    */
+    height: min(100svh, 56.25vw);
+    min-height: 720px;
+
+    overflow: hidden;
+
+    background: #2484d0;
+    color: #fff;
+}
+
+
+/* Hero Continuous Slideshow */
+.hero-slideshow {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.4s ease-in-out, visibility 1.4s ease-in-out;
+    will-change: opacity;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero-reference-mode .hero-reference-image,
+.hero-reference-mode .hero-reference-video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    display: block;
+    pointer-events: none;
+    transform: scale(1);
+    transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-slide.active .hero-reference-image {
+    transform: scale(1.04);
+}
+
+
+.hero-reference-content {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    width: min(90%, 1450px);
+    margin: 0 auto;
+
+    pointer-events: none;
+}
+
+
+.hero-reference-copy {
+    position: absolute;
+
+    left: 0;
+    top: 22%;
+
+    max-width: 760px;
+}
+
+
+.hero-reference-title {
+    margin: 0;
+
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-size: clamp(48px, 4.35vw, 72px);
+    line-height: 1.04;
+
+    letter-spacing: -.055em;
+    font-weight: bolder;
+
+    color: #0104d5;
+
+    text-wrap: balance;
+}
+
+
+.hero-reference-description {
+    position: absolute;
+
+    right: 0;
+    top: 23%;
+
+    width: min(360px, 30%);
+
+    margin: 0;
+
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.38;
+
+    font-weight: 400;
+    letter-spacing: -.025em;
+
+    color: rgba(255,255,255,.96);
+}
+
+
+.hero-reference-stats {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 34px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,.55);
+}
+
+
+.hero-reference-stat {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    min-width: 0;
+
+    padding: 0 30px;
+
+    border-right: 1px solid rgba(255,255,255,.45);
+}
+
+
+.hero-reference-stat:first-child {
+    padding-left: 0;
+}
+
+
+.hero-reference-stat:last-child {
+    padding-right: 0;
+    border-right: 0;
+}
+
+
+.hero-reference-stat strong {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-size: clamp(36px, 3vw, 50px);
+    line-height: .95;
+
+    font-weight: 400;
+    letter-spacing: -.05em;
+
+    white-space: nowrap;
+}
+
+
+.hero-reference-stat span {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-size: 15px;
+    line-height: 1.35;
+
+    font-weight: 400;
+
+    color: rgba(255,255,255,.94);
+}
+
+
+/* =========================================================
+   1440px AND BELOW
+   Large Desktop
+
+   Desktop layout is preserved.
+========================================================= */
+
+@media screen and (max-width: 1440px) {
+
+    .hero-reference-content {
+        width: 90%;
+    }
+
+    .hero-reference-title {
+        font-size: clamp(48px, 4.35vw, 72px);
+    }
+
+    .hero-reference-description {
+        width: min(360px, 30%);
+        font-size: clamp(16px, 1.2vw, 20px);
+    }
+
+    .hero-reference-stat {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+
+/* =========================================================
+   1152px AND BELOW
+   Laptop / Small Desktop
+
+   Desktop-style layout is still preserved.
+========================================================= */
+
+@media screen and (max-width: 1152px) {
+
+    .hero-reference-content {
+        width: 90%;
+    }
+
+    .hero-reference-copy {
+        top: 20%;
+        max-width: 650px;
+    }
+
+    .hero-reference-title {
+        font-size: clamp(46px, 5vw, 64px);
+    }
+
+    .hero-reference-description {
+        top: 21%;
+
+        width: min(320px, 30%);
+
+        font-size: clamp(16px, 1.7vw, 19px);
+    }
+
+    .hero-reference-stat {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-reference-stat strong {
+        font-size: clamp(34px, 3vw, 46px);
+    }
+
+    .hero-reference-stat span {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   992px AND BELOW
+   TABLET
+
+   Description + Stats hidden.
+========================================================= */
+
+@media screen and (max-width: 992px) {
+
+    .hero-reference-mode {
+        width: 100%;
+
+        height: 650px;
+        min-height: 650px;
+
+        overflow: hidden;
+    }
+
+    .hero-reference-mode .hero-reference-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .hero-reference-content {
+        width: 90%;
+        height: 100%;
+    }
+
+    .hero-reference-copy {
+        top: 17%;
+        left: 0;
+
+        max-width: 620px;
+    }
+
+    .hero-reference-title {
+        font-size: clamp(42px, 6vw, 58px);
+        line-height: 1.04;
+    }
+
+    /*
+       Hide description on tablet
+    */
+
+    .hero-reference-description {
+        display: none !important;
+    }
+
+    /*
+       Hide statistics on tablet
+    */
+
+    .hero-reference-stats {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   768px AND BELOW
+   LARGE MOBILE / TABLET PORTRAIT
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    .hero-reference-mode {
+        width: 100%;
+
+        height: 600px;
+        min-height: 600px;
+
+        overflow: hidden;
+    }
+
+    .hero-reference-mode .hero-reference-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .hero-reference-content {
+        width: 88%;
+        height: 100%;
+    }
+
+    .hero-reference-copy {
+        top: 13%;
+        left: 0;
+
+        max-width: 100%;
+    }
+
+    .hero-reference-title {
+        max-width: 600px;
+
+        font-size: clamp(42px, 10vw, 58px);
+        line-height: 1.02;
+
+        letter-spacing: -.045em;
+    }
+
+    /*
+       Hide description
+    */
+
+    .hero-reference-description {
+        display: none !important;
+    }
+
+    /*
+       Hide stats
+    */
+
+    .hero-reference-stats {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   576px AND BELOW
+   MEDIUM MOBILE
+========================================================= */
+
+@media screen and (max-width: 576px) {
+
+    .hero-reference-mode {
+        width: 100%;
+
+        height: 560px;
+        min-height: 560px;
+
+        overflow: hidden;
+    }
+
+    .hero-reference-mode .hero-reference-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .hero-reference-content {
+        width: 88%;
+        height: 100%;
+    }
+
+    .hero-reference-copy {
+        top: 12%;
+        left: 0;
+
+        max-width: 100%;
+    }
+
+    .hero-reference-title {
+        max-width: 100%;
+
+        font-size: clamp(38px, 10.5vw, 52px);
+        line-height: 1.03;
+
+        letter-spacing: -.04em;
+    }
+
+    /*
+       Hide description
+    */
+
+    .hero-reference-description {
+        display: none !important;
+    }
+
+    /*
+       Hide stats
+    */
+
+    .hero-reference-stats {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   480px AND BELOW
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .hero-reference-mode {
+        width: 100%;
+
+        height: 520px;
+        min-height: 520px;
+
+        overflow: hidden;
+    }
+
+    .hero-reference-mode .hero-reference-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .hero-reference-content {
+        width: 87%;
+        height: 100%;
+    }
+
+    .hero-reference-copy {
+        top: 11%;
+        left: 0;
+
+        max-width: 100%;
+    }
+
+    .hero-reference-title {
+        max-width: 100%;
+margin-top: 40px;
+margin-left: 25px;
+        font-size: 35px;
+
+        line-height: 1.02;
+
+        letter-spacing: -.04em;
+    }
+
+    /*
+       Completely hide description
+    */
+
+    .hero-reference-description {
+        display: none !important;
+    }
+
+    /*
+       Completely hide statistics
+    */
+
+    .hero-reference-stats {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   320px AND BELOW
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media screen and (max-width: 320px) {
+
+    .hero-reference-mode {
+        width: 100%;
+
+        height: 450px;
+        min-height: 450px;
+
+        overflow: hidden;
+    }
+
+    .hero-reference-mode .hero-reference-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .hero-reference-content {
+        width: 90%;
+        height: 100%;
+    }
+
+    .hero-reference-copy {
+        top: 9%;
+        left: 0;
+
+        max-width: 100%;
+    }
+
+    .hero-reference-title {
+        max-width: 100%;
+
+        font-size: 30px;
+        line-height: 1.04;
+        text-align: center;
+        letter-spacing: -.035em;
+        margin-top: 40px;
+        margin-left: 15px;
+    }
+
+    /*
+       Hide description
+    */
+
+    .hero-reference-description {
+        display: none !important;
+    }
+
+    /*
+       Hide all statistics
+    */
+
+    .hero-reference-stats {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   SECTION TYPOGRAPHY
+========================================================= */
+
+.hero,
+.hero * {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.hero-title {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.hero-description {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.hero-stat strong {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.hero-stat span {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.hero-reference-title {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.hero-reference-description {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.hero-reference-stat strong {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.hero-reference-stat span {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+/* =========================================================
+   SECTION-WISE BODY TYPOGRAPHY
+========================================================= */
+
+.hero-description,
+.hero-reference-description {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}

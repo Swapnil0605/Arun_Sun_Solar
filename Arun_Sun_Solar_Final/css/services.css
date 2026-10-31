@@ -1,0 +1,958 @@
+/* =========================================
+   SERVICES SECTION
+   Desktop design preserved
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+
+.services {
+    width: 100%;
+
+    padding: 100px 0 45px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.services-container {
+    width: min(92%, 1400px);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   SERVICES HEADER
+========================================= */
+
+.services-header {
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    margin: 0 auto 52px;
+}
+
+
+.services-title {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    margin: 0 auto;
+
+    max-width: 850px;
+
+    font-size: clamp(44px, 4.1vw, 64px);
+
+    line-height: 1.08;
+
+    font-weight: 100;
+
+    letter-spacing: -1.8px;
+
+    color: #080d2b;
+
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+}
+
+
+/* =========================================
+   SERVICES ROW
+========================================= */
+
+.services-row {
+    display: flex;
+
+    gap: 12px;
+
+    width: 100%;
+
+    height: 500px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   SERVICE CARD
+========================================= */
+
+.service-card {
+    position: relative;
+
+    flex: 1 1 0;
+
+    min-width: 0;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #dce8f8;
+
+    isolation: isolate;
+
+    cursor: pointer;
+
+    transition:
+        flex 0.85s cubic-bezier(.22, .61, .36, 1),
+        box-shadow 0.5s ease;
+}
+
+
+/* Desktop hover effect */
+
+.services-row:hover .service-card {
+    flex: 0.28 1 0;
+}
+
+
+.services-row .service-card:hover {
+    flex: 3.72 1 0;
+
+    box-shadow: 0 24px 60px rgba(8, 13, 43, 0.16);
+}
+
+
+/* =========================================
+   SERVICE IMAGE
+========================================= */
+
+.service-image {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+
+.service-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        180deg,
+        rgba(248, 251, 255, 0.92) 0%,
+        rgba(242, 247, 255, 0.72) 28%,
+        rgba(230, 239, 252, 0.34) 55%,
+        rgba(8, 18, 45, 0.08) 100%
+    );
+
+    pointer-events: none;
+}
+
+
+.service-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform: scale(1.001);
+
+    transition:
+        transform 0.9s cubic-bezier(.22, .61, .36, 1),
+        filter 0.6s ease;
+}
+
+
+.service-card:hover .service-image img {
+    transform: scale(1.035);
+
+    filter: saturate(1.04);
+}
+
+
+/* =========================================
+   SERVICE CONTENT
+========================================= */
+
+.service-content {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    z-index: 2;
+
+    padding: 28px 32px;
+
+    pointer-events: none;
+}
+
+
+.service-content h3 {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    margin: 0;
+
+    max-width: 470px;
+
+    font-size: clamp(24px, 2.05vw, 34px);
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    letter-spacing: -0.6px;
+
+    color: #071022;
+
+    text-shadow: 0 1px 2px rgba(255, 255, 255, .55);
+
+    transition: color 0.4s ease;
+}
+
+
+.service-card:hover .service-content h3 {
+    color: #071022;
+}
+
+
+/* =========================================
+   VIEW MORE ROW
+========================================= */
+
+.services-more-row {
+    max-height: 0;
+
+    margin-bottom: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform: translateY(-18px);
+
+    pointer-events: none;
+
+    transition:
+        max-height 0.75s cubic-bezier(.22, .61, .36, 1),
+        margin-bottom 0.75s ease,
+        opacity 0.45s ease,
+        transform 0.75s cubic-bezier(.22, .61, .36, 1);
+}
+
+
+.services-more-row.is-visible {
+    max-height: 520px;
+
+    margin-bottom: 12px;
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+/* =========================================
+   VIEW MORE BUTTON
+========================================= */
+
+.services-view-more {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    min-width: 190px;
+
+    margin: 26px auto 0;
+
+    padding: 14px 24px;
+
+    border: 1px solid rgba(8, 13, 43, 0.16);
+
+    border-radius: 999px;
+
+    background: #080d2b;
+
+    color: #fff;
+
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.services-view-more:hover {
+    transform: translateY(-3px);
+
+    background: #123edb;
+
+    box-shadow: 0 12px 28px rgba(8, 13, 43, 0.16);
+}
+
+
+.services-view-more-icon {
+    font-size: 18px;
+
+    line-height: 1;
+
+    transition: transform 0.35s ease;
+}
+
+
+.services-view-more[aria-expanded="true"] .services-view-more-icon {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   1440px AND BELOW
+   LARGE DESKTOP
+========================================= */
+
+@media screen and (max-width: 1440px) {
+
+    .services-container {
+        width: 92%;
+
+        max-width: 1350px;
+    }
+
+    .services-header {
+        margin-bottom: 48px;
+    }
+
+    .services-title {
+        max-width: 820px;
+
+        font-size: clamp(44px, 4.1vw, 62px);
+    }
+
+    .services-row {
+        height: 480px;
+    }
+
+    .service-content {
+        padding: 27px 30px;
+    }
+
+    .service-content h3 {
+        font-size: clamp(24px, 2.1vw, 33px);
+    }
+}
+
+
+/* =========================================
+   1152px AND BELOW
+   LAPTOP / SMALL DESKTOP
+========================================= */
+
+@media screen and (max-width: 1152px) {
+
+    .services {
+        padding: 90px 0 45px;
+    }
+
+    .services-container {
+        width: 90%;
+
+        max-width: 1050px;
+    }
+
+    .services-header {
+        margin-bottom: 42px;
+    }
+
+    .services-title {
+        max-width: 750px;
+
+        font-size: clamp(42px, 5vw, 58px);
+
+        line-height: 1.08;
+    }
+
+    .services-row {
+        height: 440px;
+
+        gap: 12px;
+    }
+
+    .service-card {
+        border-radius: 20px;
+    }
+
+    .service-content {
+        padding: 25px 26px;
+    }
+
+    .service-content h3 {
+        max-width: 400px;
+
+        font-size: clamp(23px, 2.5vw, 30px);
+
+        line-height: 1.16;
+    }
+
+    .services-row:hover .service-card {
+        flex: 1 1 0;
+    }
+
+    .services-row .service-card:hover {
+        flex: 1 1 0;
+
+        box-shadow: none;
+    }
+
+    .service-card:hover .service-image img {
+        transform: scale(1.001);
+
+        filter: none;
+    }
+}
+
+
+/* =========================================
+   992px AND BELOW
+   TABLET
+========================================= */
+
+@media screen and (max-width: 992px) {
+
+    .services {
+        padding: 75px 0 50px;
+    }
+
+    .services-container {
+        width: 88%;
+
+        max-width: 850px;
+    }
+
+    .services-header {
+        margin-bottom: 35px;
+    }
+
+    .services-title {
+        max-width: 750px;
+
+        font-size: clamp(40px, 6vw, 54px);
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+    }
+
+    .services-row {
+        height: 400px;
+
+        gap: 12px;
+    }
+
+    .service-card {
+        border-radius: 18px;
+    }
+
+    .service-content {
+        padding: 24px 24px;
+    }
+
+    .service-content h3 {
+        max-width: 330px;
+
+        font-size: clamp(22px, 3vw, 28px);
+
+        line-height: 1.17;
+    }
+
+    /* Disable desktop expanding animation on tablet */
+
+    .services-row:hover .service-card {
+        flex: 1 1 0;
+    }
+
+    .services-row .service-card:hover {
+        flex: 1 1 0;
+
+        box-shadow: none;
+    }
+
+    .service-card:hover .service-image img {
+        transform: scale(1.001);
+
+        filter: none;
+    }
+
+    .services-more-row.is-visible {
+        max-height: 420px;
+    }
+
+    .services-view-more {
+        margin-top: 24px;
+    }
+}
+
+
+/* =========================================
+   768px AND BELOW
+   LARGE MOBILE / TABLET PORTRAIT
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    .services {
+        padding: 60px 0 45px;
+    }
+
+    .services-container {
+        width: 88%;
+
+        max-width: 650px;
+    }
+
+    .services-header {
+        margin-bottom: 30px;
+    }
+
+    .services-title {
+        max-width: 600px;
+
+        font-size: clamp(36px, 8vw, 50px);
+
+        line-height: 1.07;
+
+        letter-spacing: -1.2px;
+    }
+
+    .services-row {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        height: auto;
+
+        gap: 14px;
+
+        margin-bottom: 14px;
+    }
+
+    .service-card,
+    .services-row:hover .service-card,
+    .services-row .service-card:hover {
+        flex: none;
+
+        width: 100%;
+
+        height: 350px;
+
+        min-height: 350px;
+
+        border-radius: 17px;
+
+        box-shadow: none;
+    }
+
+    .service-image img {
+        transform: scale(1.001);
+
+        filter: none;
+    }
+
+    .service-card:hover .service-image img {
+        transform: scale(1.001);
+
+        filter: none;
+    }
+
+    .service-content {
+        padding: 24px 24px;
+    }
+
+    .service-content h3 {
+        max-width: 90%;
+
+        font-size: clamp(22px, 5vw, 28px);
+
+        line-height: 1.16;
+
+        letter-spacing: -0.4px;
+    }
+
+    /* More services */
+
+    .services-more-row {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        height: auto;
+
+        gap: 14px;
+    }
+
+    .services-more-row.is-visible {
+        max-height: 760px;
+
+        margin-bottom: 14px;
+    }
+
+    .services-view-more {
+        min-width: 170px;
+
+        margin-top: 20px;
+
+        padding: 13px 23px;
+
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================
+   576px AND BELOW
+   MEDIUM MOBILE
+========================================= */
+
+@media screen and (max-width: 576px) {
+
+    .services {
+        padding: 50px 0 40px;
+    }
+
+    .services-container {
+        width: 88%;
+    }
+
+    .services-header {
+        margin-bottom: 27px;
+    }
+
+    .services-title {
+        max-width: 100%;
+
+        font-size: clamp(34px, 9vw, 46px);
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+    }
+
+    .services-row {
+        gap: 12px;
+
+        margin-bottom: 12px;
+    }
+
+    .service-card,
+    .services-row:hover .service-card,
+    .services-row .service-card:hover {
+        height: 320px;
+
+        min-height: 320px;
+
+        border-radius: 15px;
+    }
+
+    .service-content {
+        padding: 21px 21px;
+    }
+
+    .service-content h3 {
+        max-width: 92%;
+
+        font-size: clamp(21px, 5.5vw, 26px);
+
+        line-height: 1.17;
+
+        letter-spacing: -0.35px;
+    }
+
+    .services-more-row {
+        gap: 12px;
+    }
+
+    .services-more-row.is-visible {
+        max-height: 700px;
+
+        margin-bottom: 12px;
+    }
+
+    .services-view-more {
+        min-width: 160px;
+
+        margin-top: 18px;
+
+        padding: 12px 22px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   480px AND BELOW
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 480px) {
+
+    .services {
+        padding: 45px 0 38px;
+    }
+
+    .services-container {
+        width: 87%;
+    }
+
+    .services-header {
+        margin-bottom: 25px;
+    }
+
+    .services-title {
+        font-size: clamp(32px, 9.8vw, 43px);
+
+        line-height: 1.08;
+
+        letter-spacing: -0.9px;
+    }
+
+    .services-row {
+        gap: 11px;
+
+        margin-bottom: 11px;
+    }
+
+    .service-card,
+    .services-row:hover .service-card,
+    .services-row .service-card:hover {
+        width: 100%;
+
+        height: 295px;
+
+        min-height: 295px;
+
+        border-radius: 14px;
+    }
+
+    .service-content {
+        padding: 19px 19px;
+    }
+
+    .service-content h3 {
+        max-width: 94%;
+
+        font-size: clamp(20px, 5.8vw, 25px);
+
+        line-height: 1.18;
+
+        letter-spacing: -0.3px;
+    }
+
+    .services-more-row {
+        gap: 11px;
+    }
+
+    .services-more-row.is-visible {
+        max-height: 640px;
+
+        margin-bottom: 11px;
+    }
+
+    .services-view-more {
+        min-width: 150px;
+
+        margin-top: 17px;
+
+        padding: 11px 21px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   320px AND BELOW
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 320px) {
+
+    .services {
+        padding: 40px 0 35px;
+    }
+
+    .services-container {
+        width: 90%;
+    }
+
+    .services-header {
+        margin-bottom: 22px;
+    }
+
+    .services-title {
+        max-width: 100%;
+
+        font-size: 31px;
+
+        line-height: 1.1;
+
+        letter-spacing: -0.7px;
+    }
+
+    .services-row {
+        gap: 10px;
+
+        margin-bottom: 10px;
+    }
+
+    .service-card,
+    .services-row:hover .service-card,
+    .services-row .service-card:hover {
+        height: 270px;
+
+        min-height: 270px;
+
+        border-radius: 12px;
+    }
+
+    .service-content {
+        padding: 17px 17px;
+    }
+
+    .service-content h3 {
+        max-width: 95%;
+
+        font-size: 20px;
+
+        line-height: 1.18;
+
+        letter-spacing: -0.2px;
+    }
+
+    .services-more-row {
+        gap: 10px;
+    }
+
+    .services-more-row.is-visible {
+        max-height: 580px;
+
+        margin-bottom: 10px;
+    }
+
+    .services-view-more {
+        min-width: 140px;
+
+        margin-top: 15px;
+
+        padding: 10px 19px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================
+   HOME PAGE PRIMARY ACTION COLOR
+========================================= */
+
+body.home-page .services-view-more {
+    background: #8ed8ff;
+
+    border-color: #8ed8ff;
+
+    color: #111111;
+
+    box-shadow: 0 10px 24px rgba(82, 190, 241, 0.20);
+}
+
+
+body.home-page .services-view-more:hover {
+    background: #70c9f5;
+
+    border-color: #70c9f5;
+
+    color: #111111;
+
+    box-shadow: 0 12px 28px rgba(82, 190, 241, 0.24);
+}
+
+
+/* =========================================
+   SECTION TYPOGRAPHY
+========================================= */
+
+.services,
+.services * {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.services-title {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.service-content h3 {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.services-view-more {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+
+.service-content p {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+
+    font-weight: 400;
+
+    letter-spacing: -0.005em;
+}
+
+
+/* =========================================
+   GLOBAL HEADING TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+/* Service cards are now navigational links. */
+.service-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}

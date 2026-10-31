@@ -1,0 +1,466 @@
+/* Aktiv Grotesk for headings; Verdana for body text */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* =========================================
+   PROJECTS PAGE
+========================================= */
+
+.projects-page {
+    background: #ffffff;
+    color: #070b38;
+    padding-top: 145px;
+}
+
+/* =========================================
+   PROJECTS HERO - SWID-INSPIRED PORTFOLIO BANNER
+========================================= */
+
+.projects-hero {
+    position: relative;
+    width: min(1500px, calc(100% - 36px));
+    min-height: 694px;
+    margin: 0 auto;
+    border-radius: 34px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    background-image: url("../images/projects/projects-hero-solar-panels.jpg");
+    background-size: cover;
+    background-position: center center;
+    isolation: isolate;
+    box-shadow: 0 12px 32px rgba(8, 13, 59, 0.10);
+}
+
+/* No dark/black overlay. The reference uses a soft white fade on the text side. */
+.projects-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    /* background: linear-gradient(90deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.82) 25%, rgba(255,255,255,0.42) 48%, rgba(255,255,255,0.08) 70%, rgba(255,255,255,0) 100%); */
+}
+
+.projects-hero-overlay {
+    width: min(590px, 48%);
+    padding: 124px 0 74px 58px;
+    color: #0a1c38;
+}
+
+.projects-title {
+    margin: 0;
+    color: #071a35;
+    font-size: clamp(58px, 6vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+    font-weight: 700;
+}
+
+.projects-intro {
+    max-width: 500px;
+    margin: 24px 0 0;
+    color: #536176;
+    font-size: clamp(21px, 2.1vw, 30px);
+    line-height: 1.35;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+/* .projects-hero-accent {
+    display: block;
+    width: 74px;
+    height: 4px;
+    margin-top: 22px;
+    background: #1db0ff;
+} */
+
+/* =========================================
+   PROJECTS INTRO BELOW HERO
+========================================= */
+
+.projects-intro-block {
+    width: min(1180px, 92%);
+    margin: 68px auto 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 14px;
+    row-gap: 16px;
+    text-align: center;
+}
+
+.projects-intro-block h2 {
+    margin: 0;
+    color: #071a35;
+    font-size: clamp(40px, 4vw, 56px);
+    line-height: 1;
+    letter-spacing: -2px;
+    font-weight: 700;
+}
+
+.projects-intro-rule {
+    width: 125px;
+    height: 2px;
+    background: #e0e4e9;
+}
+
+.projects-intro-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #159be2;
+    flex: 0 0 11px;
+}
+
+.projects-intro-block p {
+    flex-basis: 100%;
+    margin: 0 auto;
+    color: #536176;
+    font-size: clamp(17px, 1.7vw, 22px);
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.projects-grid {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 440px;
+    border: 1px solid rgba(0, 0, 217, 0.12);
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 14px 40px rgba(5, 11, 59, 0.08);
+}
+
+.project-card-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5, 10, 50, 0.02) 22%, rgba(5, 10, 50, 0.88) 100%);
+}
+
+.project-card:hover .project-card-image {
+    transform: scale(1.045);
+}
+
+.project-card-content {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    color: #fff;
+}
+
+.project-number {
+    display: inline-flex;
+    margin-bottom: 12px;
+    color: #9bdff2;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.project-card h2 {
+    margin: 0 0 10px;
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.1;
+}
+
+.project-card p {
+    margin: 0;
+    max-width: 540px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.project-meta span {
+    padding: 7px 11px;
+    border: 1px solid rgba(255,255,255,.28);
+    border-radius: 999px;
+    background: rgba(255,255,255,.10);
+    backdrop-filter: blur(8px);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.projects-subsection {
+    width: min(1180px, 92%);
+    margin: 100px auto 0;
+    text-align: center;
+}
+
+.projects-subsection h2 {
+    margin: 0;
+    color: #080d3b;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.08;
+}
+
+.projects-subsection > p {
+    max-width: 720px;
+    margin: 18px auto 34px;
+    color: #36517b;
+    line-height: 1.7;
+}
+
+.project-source-frame {
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 217, 0.12);
+    border-radius: 24px;
+    background: #f7f9ff;
+    box-shadow: 0 14px 40px rgba(5, 11, 59, 0.08);
+}
+
+.project-source-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.certifications {
+    width: min(1180px, 92%);
+    margin: 120px auto 0;
+    padding-bottom: 110px;
+    text-align: center;
+}
+
+.cert-grid {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.cert-card {
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 217, 0.12);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 12px 34px rgba(5, 11, 59, 0.07);
+    text-align: left;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 44px rgba(5, 11, 59, 0.12);
+}
+
+.cert-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 340px;
+    padding: 18px;
+    background: #f4f8ff;
+}
+
+.cert-card img {
+    display: block;
+    width: 100%;
+    max-height: 330px;
+    object-fit: contain;
+}
+
+.cert-card h3 {
+    margin: 0;
+    padding: 18px 20px 20px;
+    color: #080d3b;
+    font-size: 17px;
+}
+
+.projects-page .footer {
+    margin-top: 80px;
+}
+
+@media (max-width: 850px) {
+    .projects-page {
+        padding-top: 120px;
+    }
+
+    .projects-grid,
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 520px) {
+    .projects-hero {
+        width: calc(100% - 28px);
+        min-height: 560px;
+        border-radius: 24px;
+        background-position: center center;
+    }
+
+    .projects-hero-overlay {
+        width: 100%;
+        padding: 58px 28px;
+    }
+
+    .projects-intro-block {
+        margin-top: 48px;
+    }
+
+    .projects-intro-rule {
+        width: 70px;
+    }
+
+    .projects-title,
+    .cert-title {
+        letter-spacing: -1px;
+    }
+
+    .projects-intro,
+    .cert-intro {
+        font-size: 15px;
+    }
+
+    .project-card-content {
+        padding: 22px;
+    }
+}
+
+/* Rooftop project list — presented as live website text instead of the PDF image */
+.rooftop-table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(0, 0, 217, 0.12);
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 14px 40px rgba(5, 11, 59, 0.08);
+}
+
+.rooftop-projects-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #080d3b;
+    font-size: 14px;
+    text-align: left;
+}
+
+.rooftop-projects-table th {
+    padding: 17px 18px;
+    background: #080d3b;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.rooftop-projects-table th:first-child {
+    border-top-left-radius: 23px;
+}
+
+.rooftop-projects-table th:last-child {
+    border-top-right-radius: 23px;
+}
+
+.rooftop-projects-table td {
+    padding: 17px 18px;
+    border-bottom: 1px solid rgba(54, 81, 123, 0.13);
+    color: #36517b;
+    line-height: 1.45;
+    vertical-align: middle;
+}
+
+.rooftop-projects-table tbody tr:nth-child(even) td {
+    background: #f7f9ff;
+}
+
+.rooftop-projects-table tbody tr:hover td {
+    background: #eef4ff;
+}
+
+.rooftop-projects-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.rooftop-projects-table td:first-child {
+    width: 70px;
+    color: #080d3b;
+    font-weight: 800;
+    text-align: center;
+}
+
+.rooftop-projects-table td:nth-child(2),
+.rooftop-projects-table td:nth-child(4) {
+    white-space: nowrap;
+    font-weight: 700;
+    color: #080d3b;
+}
+
+@media (max-width: 850px) {
+    .rooftop-table-wrap {
+        border-radius: 18px;
+    }
+
+    .rooftop-projects-table {
+        min-width: 850px;
+        font-size: 13px;
+    }
+
+    .rooftop-projects-table th,
+    .rooftop-projects-table td {
+        padding: 14px 15px;
+    }
+}
+
+/* Section typography — Inter, applied only within this section. */
+.projects-page, .projects-page * {
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+}
+
+/* SWID-style type hierarchy for this section. */
+.projects-title { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.projects-intro { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.project-card h2 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.project-card p { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.projects-subsection h2 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.projects-subsection > p { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.rooftop-projects-table th { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+.rooftop-projects-table td { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
+
+/* Section-wise SWID-style body typography */
+.project-card p,
+.projects-subsection > p,
+.rooftop-projects-table td { font-family: "Aktiv Grotesk", Verdana, sans-serif; font-weight: 400; letter-spacing: -0.005em; }
+
+/* Page background update: keep page background white */
+.projects-page { background: #ffffff; }
+
+
+/* Requested typography: headings use Aktiv Grotesk */
+h1, h2, h3, h4, h5, h6 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
