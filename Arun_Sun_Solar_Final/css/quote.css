@@ -1,425 +1,592 @@
-/* Aktiv Grotesk for headings; Verdana for body text */
+/* Aktiv Grotesk for headings; Verdana / Inter for body text */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 /* =========================================
-   Contact PAGE
-========================================= */
-
-/* =========================================
-   CONTACT PAGE
+   CONTACT / QUOTE PAGE STYLING
+   State-of-the-art UI Redesign
 ========================================= */
 
 .quote-page {
     min-height: 100vh;
-    background: #ffffff;
+    background: #fbfcfe;
     color: #080d2b;
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-.quote-shell {
-    width: 100%;
-    max-width: none;
-    margin: 0 auto;
-    padding: 76px 0 90px;
+.quote-page * {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   HERO BANNER
+========================================= */
+
+.contact-hero {
     position: relative;
+    width: 100%;
+    padding: 130px 24px 60px;
+    background: 
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(18, 103, 232, 0.12) 0%, rgba(251, 252, 254, 0) 80%),
+        linear-gradient(180deg, #f3f7fd 0%, #fbfcfe 100%);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    text-align: center;
+    overflow: hidden;
 }
 
-/* Full-width solar background behind the contact card. */
-.quote-shell::before {
+.contact-hero::before {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 760px;
-    z-index: 0;
-    background:
-        linear-gradient(180deg, rgba(8,13,43,.72) 0%, rgba(8,13,43,.44) 42%, rgba(8,13,43,.28) 72%, rgba(255,255,255,.04) 100%),
-        url("../images/hero/hero-1.jpg") center center / cover no-repeat;
+    inset: 0;
+    background-image: 
+        radial-gradient(rgba(18, 103, 232, 0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.6;
+    pointer-events: none;
 }
 
-.quote-back {
-    display: none;
-}
-
-.quote-card {
+.contact-hero-container {
     position: relative;
     z-index: 1;
-    width: min(900px, calc(100% - 48px));
+    width: min(92%, 1100px);
     margin: 0 auto;
-    overflow: hidden;
-    background: rgba(255,255,255,.98);
-    border: 1px solid rgba(226,230,245,.9);
-    border-radius: 24px;
-    box-shadow: 0 24px 60px rgba(8,13,43,.20);
 }
 
-.quote-form-wrap {
-    width: 100%;
-    padding: 48px 64px 52px;
-    display: flex;
+.contact-hero-kicker {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: #e8f1fd;
+    color: #1267E8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border: 1px solid rgba(18, 103, 232, 0.20);
 }
 
-.quote-form-inner {
-    width: 100%;
-    max-width: 760px;
-}
-
-.quote-form-title {
-    margin: 0 0 28px;
-    text-align: center;
-    font-size: 36px;
-    line-height: 1.15;
+.contact-hero-title {
+    margin: 0 0 18px;
+    font-family: "Aktiv Grotesk", Verdana, sans-serif;
+    font-size: clamp(36px, 4.4vw, 54px);
+    line-height: 1.14;
+    letter-spacing: -0.03em;
+    font-weight: 800;
     color: #080d2b;
+    text-wrap: balance;
 }
 
-.quote-form-subtitle {
-    display: none;
+.contact-hero-title span {
+    color: #1267E8;
 }
 
-.quote-form {
-    width: 100%;
+.contact-hero-subtitle {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    font-size: clamp(16px, 1.25vw, 19px);
+    line-height: 1.6;
+    color: #475467;
+    font-weight: 400;
+}
+
+.contact-hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.contact-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* =========================================
+   MAIN CONTACT SECTION GRID
+========================================= */
+
+.contact-main-section {
+    position: relative;
+    width: min(92%, 1380px);
+    margin: 60px auto 80px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* =========================================
+   LEFT: FORM CARD
+========================================= */
+
+.contact-form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 28px;
+    padding: 48px;
+    box-shadow: 0 20px 48px rgba(18, 103, 232, 0.07);
+    position: relative;
+}
+
+.contact-form-header {
+    margin-bottom: 32px;
+}
+
+.contact-form-kicker {
+    display: inline-block;
+    color: #1267E8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.contact-form-header h2 {
+    margin: 0 0 10px;
+    font-size: clamp(26px, 2.5vw, 34px);
+    color: #080d2b;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.contact-form-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.contact-form {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 38px;
-    row-gap: 18px;
+    column-gap: 24px;
+    row-gap: 20px;
 }
 
-.quote-field {
-    margin: 0;
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
-.quote-field label {
-    display: block;
-    margin-bottom: 7px;
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    margin-bottom: 8px;
     font-size: 13px;
-    font-weight: 700;
-    color: #080d2b;
+    font-weight: 600;
+    color: #1e293b;
+    letter-spacing: -0.01em;
 }
 
-.quote-field input,
-.quote-field select,
-.quote-field textarea {
+.form-group label span {
+    color: #ef4444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
     box-sizing: border-box;
-    padding: 13px 14px;
-    border: 1px solid #d9deed;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #080d2b;
-    font: inherit;
-    outline: none;
-    transition: border-color .25s ease, box-shadow .25s ease;
-}
-
-.quote-field textarea {
-    min-height: 116px;
-    resize: vertical;
-}
-
-.quote-field input:focus,
-.quote-field select:focus,
-.quote-field textarea:focus {
-    border-color: #1667e8;
-    box-shadow: 0 0 0 3px rgba(22,103,232,.08);
-}
-
-.quote-submit {
-    grid-column: 1 / -1;
-    width: min(300px, 100%);
-    justify-self: center;
-    margin-top: 8px;
-    padding: 14px 22px;
-    border: 0;
-    border-radius: 999px;
-    background: #1667e8;
-    color: #ffffff;
+    padding: 14px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    color: #0f172a;
+    font-family: inherit;
     font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+    outline: none;
+    transition: all 0.22s ease;
 }
 
-.quote-submit:hover {
-    background: #0d5bd0;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(22,103,232,.20);
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
 }
 
-.quote-note {
-    display: none;
-}
-
-/* =========================================
-   CONTACT DETAILS STRIP
-========================================= */
-.quote-contact-strip {
-    position: relative;
-    z-index: 1;
-    width: min(1180px, calc(100% - 48px));
-    /* Keep the contact details card below the solar-background area with a clean gap. */
-    margin: 200px auto 0;
-    padding: 24px 30px;
-    display: grid;
-    grid-template-columns: 1.2fr auto 1.35fr auto .85fr auto 1.15fr;
-    align-items: center;
-    gap: 24px;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     background: #ffffff;
-    border: 1px solid #e2e6f5;
-    border-radius: 20px;
-    box-shadow: 0 16px 40px rgba(0, 0, 217, .08);
+    border-color: #1267E8;
+    box-shadow: 0 0 0 4px rgba(18, 103, 232, 0.12);
 }
 
-.quote-contact-item {
-    min-width: 0;
-    display: flex;
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 42px;
+}
+
+.contact-submit-btn {
+    grid-column: 1 / -1;
+    display: inline-flex;
     align-items: center;
-    gap: 18px;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #1267E8 0%, #0d54c2 100%);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(18, 103, 232, 0.26);
+    transition: all 0.25s ease;
+    margin-top: 6px;
 }
 
-.quote-contact-icon {
-    flex: 0 0 58px;
-    width: 58px;
-    height: 58px;
+.contact-submit-btn:hover {
+    background: linear-gradient(135deg, #0e56c5 0%, #0b459f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(18, 103, 232, 0.35);
+}
+
+.contact-submit-btn span {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.contact-submit-btn:hover span {
+    transform: translateX(4px);
+}
+
+.contact-trust-note {
+    grid-column: 1 / -1;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    background: #eef4ff;
-    color: #244c9b;
-    font-size: 29px;
-    font-weight: 700;
-    line-height: 1;
+    gap: 8px;
+    margin: 12px 0 0;
+    font-size: 13px;
+    color: #64748b;
+    text-align: center;
 }
 
-.quote-contact-content h3 {
-    margin: 0 0 6px;
-    color: #173d80;
-    font-size: 18px;
-    line-height: 1.2;
-}
-
-.quote-contact-content p {
-    margin: 0;
-    color: #475467;
+.form-success-banner {
+    display: none;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #065f46;
+    margin-bottom: 24px;
+    align-items: center;
+    gap: 12px;
     font-size: 14px;
-    line-height: 1.55;
+    font-weight: 500;
 }
 
-.quote-contact-divider {
-    width: 1px;
-    height: 78px;
-    background: #dfe5f2;
+.form-success-banner.is-active {
+    display: flex;
 }
 
 /* =========================================
-   LOCATION / MAP
+   RIGHT: SIDEBAR DETAILS
 ========================================= */
-.quote-map-section {
-    position: relative;
-    z-index: 1;
-    width: min(1180px, calc(100% - 48px));
-    margin: 72px auto 0;
+
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.quote-map-heading {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.quote-map-heading h2 {
-    margin: 0 0 12px;
-    color: #244c9b;
-    font-size: clamp(30px, 4vw, 40px);
-    line-height: 1.15;
-}
-
-.quote-map-heading p {
-    max-width: 850px;
-    margin: 0 auto 7px;
-    color: #475467;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.quote-map-heading strong {
-    color: #ed1111;
-}
-
-.quote-map-heading span {
-    color: #667085;
-    font-size: 14px;
-}
-
-.quote-map-card {
-    padding: 34px;
+.info-card {
     background: #ffffff;
-    border: 1px solid #e2e6f5;
+    border: 1px solid #e2e8f0;
     border-radius: 20px;
-    box-shadow: 0 18px 45px rgba(0, 0, 217, .09);
-    text-align: center;
+    padding: 26px 28px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.quote-map-card h3 {
-    margin: 0 0 8px;
-    color: #244c9b;
-    font-size: 26px;
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(18, 103, 232, 0.08);
 }
 
-.quote-map-card > p {
-    max-width: 820px;
-    margin: 0 auto 24px;
-    color: #667085;
+.info-card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.info-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #e8f1fd;
+    color: #1267E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-card-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.info-card-title-wrap h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #080d2b;
+}
+
+.info-card-title-wrap span {
+    font-size: 12px;
+    color: #1267E8;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.info-card-body p {
+    margin: 0 0 12px;
     font-size: 14px;
     line-height: 1.6;
+    color: #475467;
 }
 
-.quote-map-frame {
-    width: min(100%, 900px);
-    height: 380px;
+.info-card-hours {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: #f1f5f9;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 4px;
+}
+
+.info-links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-quick-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    color: #0f172a;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.contact-quick-link:hover {
+    background: #e8f1fd;
+    border-color: #1267E8;
+    color: #1267E8;
+    transform: translateX(4px);
+}
+
+.contact-quick-link svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: #1267E8;
+}
+
+.whatsapp-action-card {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #ffffff;
+    border: none;
+    padding: 24px 28px;
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.whatsapp-action-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(37, 211, 102, 0.38);
+}
+
+.whatsapp-content h3 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.whatsapp-content p {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.whatsapp-icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.whatsapp-icon-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+}
+
+/* =========================================
+   LOCATION / GOOGLE MAP SECTION
+========================================= */
+
+.contact-map-section {
+    position: relative;
+    width: min(92%, 1380px);
+    margin: 0 auto 90px;
+}
+
+.map-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.map-kicker {
+    display: inline-block;
+    color: #1267E8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.map-header h2 {
+    margin: 0 0 10px;
+    font-size: clamp(26px, 3vw, 36px);
+    color: #080d2b;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.map-header p {
     margin: 0 auto;
-    overflow: hidden;
-    border-radius: 14px;
-    box-shadow: 0 12px 30px rgba(8, 13, 43, .14);
-    background: #eef2f8;
+    max-width: 680px;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
-.quote-map-frame iframe {
-    display: block;
+.map-card-wrapper {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
+    padding: 16px;
+}
+
+.map-iframe-container {
+    width: 100%;
+    height: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #e2e8f0;
+}
+
+.map-iframe-container iframe {
     width: 100%;
     height: 100%;
     border: 0;
+    display: block;
 }
 
-@media (max-width: 900px) {
-    .quote-form-wrap {
-        padding: 40px 34px 44px;
-    }
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+========================================= */
 
-    .quote-form {
+@media (max-width: 1024px) {
+    .contact-grid {
         grid-template-columns: 1fr;
-        column-gap: 0;
+        gap: 32px;
     }
 
-    .quote-submit {
-        grid-column: auto;
-    }
-
-    .quote-contact-strip {
-        margin-top: 150px;
-        grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 24px;
-    }
-
-    .quote-contact-divider {
-        width: 100%;
-        height: 1px;
+    .contact-form-card {
+        padding: 36px 30px;
     }
 }
 
-@media (max-width: 800px) {
-    .quote-shell {
-        padding-top: 52px;
-        padding-bottom: 70px;
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 110px 18px 48px;
     }
 
-    .quote-shell::before {
-        height: 650px;
-        background-position: center center;
+    .contact-form {
+        grid-template-columns: 1fr;
+        row-gap: 16px;
     }
 
-    .quote-card {
-        width: min(94%, 760px);
+    .contact-form-card {
+        padding: 28px 20px;
+        border-radius: 20px;
+    }
+
+    .info-card {
+        padding: 22px 20px;
         border-radius: 18px;
     }
 
-    .quote-form-wrap {
-        padding: 34px 22px 38px;
-    }
-
-    .quote-form-title {
-        font-size: 30px;
-        margin-bottom: 24px;
-    }
-
-    .quote-contact-strip {
-        margin-top: 110px;
-    }
-
-    .quote-contact-strip,
-    .quote-map-section {
-        width: calc(100% - 32px);
-    }
-
-    .quote-contact-item {
-        gap: 14px;
-    }
-
-    .quote-contact-icon {
-        flex-basis: 52px;
-        width: 52px;
-        height: 52px;
-        font-size: 25px;
-    }
-
-    .quote-contact-content h3 {
-        font-size: 17px;
-    }
-
-    .quote-contact-content p {
-        font-size: 13px;
-    }
-
-    .quote-map-section {
-        margin-top: 52px;
-    }
-
-    .quote-map-card {
-        padding: 22px 16px;
-        border-radius: 16px;
-    }
-
-    .quote-map-frame {
-        height: 300px;
-        border-radius: 10px;
+    .map-iframe-container {
+        height: 320px;
     }
 }
-
-/* Section typography — Inter, applied only within this section. */
-.quote-page, .quote-page * {
-    font-family: "Aktiv Grotesk", Verdana, sans-serif;
-}
-
-/* SWID-style type hierarchy for this section. */
-.quote-title { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-text { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-form-title { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-form-subtitle { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-field label { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-field input { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-field select { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-field textarea { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-submit { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-note { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-contact-content h3 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-contact-content p { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-map-heading h2 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-map-heading p { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-map-card h3 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-.quote-map-card > p { font-family: "Aktiv Grotesk", Verdana, sans-serif; }
-
-/* Section-wise SWID-style body typography */
-.quote-text,
-.quote-form-subtitle,
-.quote-contact-content p,
-.quote-map-heading p,
-.quote-map-card > p { font-family: "Aktiv Grotesk", Verdana, sans-serif; font-weight: 400; letter-spacing: -0.005em; }
-
-/* Page background update: keep page background white */
-.quote-page { background: #ffffff; }
-
-
-/* Requested typography: headings use Aktiv Grotesk */
-h1, h2, h3, h4, h5, h6 { font-family: "Aktiv Grotesk", Verdana, sans-serif; }

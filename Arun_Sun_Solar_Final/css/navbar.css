@@ -22,6 +22,8 @@
 
 
 .navbar-container {
+    position: relative;
+
     width: 100%;
 
     max-width: 1440px;
@@ -213,7 +215,7 @@
 
     right: 52px;
 
-    top: 52px;
+    top: 50%;
 
     transform: translateY(-50%);
 
@@ -233,9 +235,11 @@
 
     box-sizing: border-box;
 
-    background: #2288f5;
+    background: #1267E8;
 
-    color: #ebeaea;
+    border: 1px solid #1267E8;
+
+    color: #ffffff;
 
     font-family: "Aktiv Grotesk", Verdana, sans-serif;
 
@@ -251,7 +255,7 @@
 
     white-space: nowrap;
 
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 8px 22px rgba(18, 103, 232, 0.20);
 
     transition:
         background 0.25s ease,
@@ -272,13 +276,13 @@
 
 
 .nav-cta:hover {
-    background: #2288f5;
+    background: #0f58c7;
 
-    color: #ebeaea;
+    color: #ffffff;
 
     transform: translateY(calc(-50% - 2px));
 
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 12px 28px rgba(18, 103, 232, 0.28);
 }
 
 

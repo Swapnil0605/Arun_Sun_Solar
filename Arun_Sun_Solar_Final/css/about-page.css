@@ -7,7 +7,7 @@
 .about-page main { overflow: hidden; }
 .about-page .nav-menu a.active { color: #2288f5; }
 .about-page .nav-menu a.active::after { width: 100%; background: #2288f5; }
-.about-page .nav-cta { background: #2288f5; }
+.about-page .nav-cta { background: #1267E8; }
 .about-page-container { width: min(92%, 1400px); margin: 0 auto; }
 
 /* ABOUT HERO — image-led layout matching the approved reference */
